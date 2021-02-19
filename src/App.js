@@ -73,4 +73,6 @@ function App() {
   );
 }
 
+console.log("Hi guys testing")
+
 export default App;
