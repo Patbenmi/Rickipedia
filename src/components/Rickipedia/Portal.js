@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
+import React from 'react';
 
-function portal() {
+function Portal() {
      
         return(
             <nav>
@@ -18,5 +19,5 @@ function portal() {
 
 
 
-export default portal
+export default Portal
 

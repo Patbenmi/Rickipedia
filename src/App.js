@@ -12,9 +12,13 @@ import Footer from './components/Footer';
 import './App.css';
 import Home from './components/Rickipedia/Home'
 import Characters from './components/Rickipedia/Characters'
-import locations from './components/Rickipedia/Locations'
-import theories from './components/Rickipedia/Theories'
-import episodes from './components/Rickipedia/Episodes'
+import Locations from './components/Rickipedia/Locations'
+import Theories from './components/Rickipedia/Theories'
+import Episodes from './components/Rickipedia/Episodes'
+import Portal from './components/Rickipedia/Portal';
+
+
+
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -63,7 +67,6 @@ function App() {
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <Switch>
-          
           <Route path="/signup" component={ Signup } />
           <Route 
             path="/login" 
@@ -72,11 +75,12 @@ function App() {
           <Route path="/about" component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/" component={ Welcome } />
+          <Portal />
           <Route path="/home" component={ Home } user={currentUser}/>
           <Route path="/characters" component={ Characters } user={currentUser}/>
-          <Route path="/locations" component={ locations } user={currentUser}/>
-          <Route path="/theories" component={ theories } user={currentUser}/>
-          <Route path="/episodes" component={ episodes } user={currentUser}/>
+          <Route path="/locations" component={ Locations } user={currentUser}/>
+          <Route path="/theories" component={ Theories } user={currentUser}/>
+          <Route path="/episodes" component={ Episodes } user={currentUser}/>
           
         </Switch>
       </div>

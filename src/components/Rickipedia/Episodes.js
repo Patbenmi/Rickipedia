@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function episodes() {
+function Episodes() {
     
     
     
@@ -15,4 +15,4 @@ function episodes() {
     )
 }
 
-export default episodes
+export default Episodes
