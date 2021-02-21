@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function locations() {
+function Locations() {
     
     
     
@@ -15,4 +15,4 @@ function locations() {
     )
 }
 
-export default locations
+export default Locations

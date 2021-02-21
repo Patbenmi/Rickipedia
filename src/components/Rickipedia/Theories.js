@@ -2,7 +2,7 @@
 
 
 
-function theories() {
+function Theories() {
     return(
 
         "Your theories"
@@ -12,4 +12,4 @@ function theories() {
 }
 
 
-export default theories
+export default Theories
