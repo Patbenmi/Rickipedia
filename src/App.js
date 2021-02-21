@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React, { useEffect, useState, component } from 'react';
+import { Switch, Route, Redirect, Router } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import Navbar from './components/Navbar';
@@ -10,6 +10,11 @@ import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
 import './App.css';
+import Home from './components/Rickipedia/Home'
+import Characters from './components/Rickipedia/Characters'
+import locations from './components/Rickipedia/Locations'
+import theories from './components/Rickipedia/Theories'
+import episodes from './components/Rickipedia/Episodes'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -58,6 +63,7 @@ function App() {
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <Switch>
+          
           <Route path="/signup" component={ Signup } />
           <Route 
             path="/login" 
@@ -66,6 +72,12 @@ function App() {
           <Route path="/about" component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/" component={ Welcome } />
+          <Route path="/home" component={ Home } user={currentUser}/>
+          <Route path="/characters" component={ Characters } user={currentUser}/>
+          <Route path="/locations" component={ locations } user={currentUser}/>
+          <Route path="/theories" component={ theories } user={currentUser}/>
+          <Route path="/episodes" component={ episodes } user={currentUser}/>
+          
         </Switch>
       </div>
       <Footer />
