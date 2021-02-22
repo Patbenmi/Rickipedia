@@ -12,11 +12,12 @@ const Signup = () => {
     let [confirmPassword, setConfirmPassword] = useState('');
     let [redirect, setRedirect] = useState(false);
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value);
-    }
     const handleUserName = (e) => {
         setUserName(e.target.value);
+        console.log('22222', userName)
+    }
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
     }
     const handleRickOrMorty = (e) => {
         setRickOrMorty(e.target.value);
@@ -36,7 +37,7 @@ const Signup = () => {
         e.preventDefault();
 
         if (password === confirmPassword) {
-            const newUser = { email, password }
+            const newUser = { userName, email, password, dimension, rickOrMorty }
 
             axios.post(`${REACT_APP_SERVER_URL}/api/signup`, newUser)
             .then(response => {
