@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-function Characters({props}) {
-    console.log(props)
 
+function Characters(props) {
     return(
-        <div></div>
+       <ul>
+           {props.characters.map(character => (
+               <>
+               <li>{character.name}</li>
+               </>
+           ))}
+       </ul>
     )
 }
      
-
 
 export default Characters
