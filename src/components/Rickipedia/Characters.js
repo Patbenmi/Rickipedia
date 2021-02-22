@@ -1,12 +1,16 @@
 import React from 'react';
 
 function Characters(props) {
-    console.log(props)
     return(
-       <div></div>
+       <ul>
+           {props.characters.map(character => (
+               <>
+               <li>{character.name}</li>
+               </>
+           ))}
+       </ul>
     )
 }
      
-
 
 export default Characters
