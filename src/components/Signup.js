@@ -66,9 +66,9 @@ const Signup = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="rickOrMorty">Rick?: </label>
-                            <input type="radio" name="rickOrMorty" value={rickOrMorty} onChange={handleRickOrMorty} className="form-control"/>
+                            <input type="radio" name="rickOrMorty" value="Rick" onChange={handleRickOrMorty} className="form-control"/>
                             <label htmlFor="rickOrMorty">Morty?: </label>
-                            <input type="radio" name="rickOrMorty" value={rickOrMorty} onChange={handleRickOrMorty} className="form-control"/>
+                            <input type="radio" name="rickOrMorty" value="Morty" onChange={handleRickOrMorty} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="dimension">Dimension</label>
