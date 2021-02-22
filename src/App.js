@@ -15,7 +15,7 @@ import Characters from './components/Rickipedia/Characters'
 import Locations from './components/Rickipedia/Locations'
 import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
-
+import axios from 'axios'
 
 
 
@@ -35,15 +35,16 @@ function App() {
   const [characters, setCharacters] = useState([])
   const [episodes, setEpisodes] = useState([])
   const [locations, setLocations] = useState([])
-
+}
+​
   useEffect(() => {
-    fetch('API_info_here')
+    axios.get('/api/characters')
     .then(res => res.json())
     .then(characterData => {
       setCharacters(characterData)
     })
   }, [])
-
+​
   useEffect(() => {
     fetch('API_info_here')
     .then(res => res.json())
@@ -51,7 +52,7 @@ function App() {
       setEpisodes(episodeData)
     })
   }, [])
-
+​
   useEffect(() => {
     fetch('API_info_here')
     .then(res => res.json())
@@ -104,7 +105,7 @@ function App() {
           <Route exact path="/" component={ Welcome } />
           
           <Route path="/home" component={ Home } user={currentUser}/>
-          <Route path="/characters" component={ Characters } user={currentUser} characters={characters}/>
+          <Route path="/characters" render={()=> <Characters characters={characters} />}/>
           <Route path="/locations" component={ Locations } user={currentUser} locations={locations}/>
           <Route path="/theories" component={ Theories } user={currentUser}/>
           <Route path="/episodes" component={ Episodes } user={currentUser} episodes={episodes}/>
