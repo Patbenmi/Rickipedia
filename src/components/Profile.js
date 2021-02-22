@@ -6,7 +6,9 @@ const Profile = (props) => {
     const userData = props.user ? 
     (<div>
         <h1>Profile</h1>
-        <p><strong>Email:</strong> {props.user.email}</p> 
+        <p><strong>User Name:</strong> {props.user.userName}</p>
+        <p><strong>You are a:</strong> {props.user.rickOrMorty}</p>
+        <p><strong>Dimension:</strong> {props.user.dimension}</p> 
         <p><strong>ID:</strong> {props.user.id}</p> 
     </div>) : <h4>Loading...</h4>
 

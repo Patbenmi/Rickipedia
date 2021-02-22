@@ -5,6 +5,9 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Signup = () => {
     let [email, setEmail] = useState('')
+    let [userName, setUserName] = useState('')
+    let [rickOrMorty, setRickOrMorty] = useState('')
+    let [dimension, setDimension] = useState('')
     let [password, setPassword] = useState('');
     let [confirmPassword, setConfirmPassword] = useState('');
     let [redirect, setRedirect] = useState(false);
@@ -12,7 +15,15 @@ const Signup = () => {
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
-
+    const handleUserName = (e) => {
+        setUserName(e.target.value);
+    }
+    const handleRickOrMorty = (e) => {
+        setRickOrMorty(e.target.value);
+    }
+    const handleDimension = (e) => {
+        setDimension(e.target.value);
+    }
     const handlePassword = (e) => {
         setPassword(e.target.value);
     }
@@ -47,6 +58,20 @@ const Signup = () => {
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
                             <input type="email" name="email" value={email} onChange={handleEmail} className="form-control"/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="userName">User Name</label>
+                            <input type="text" name="userName" value={userName} onChange={handleUserName} className="form-control"/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="rickOrMorty">Rick?: </label>
+                            <input type="radio" name="rickOrMorty" value={rickOrMorty} onChange={handleRickOrMorty} className="form-control"/>
+                            <label htmlFor="rickOrMorty">Morty?: </label>
+                            <input type="radio" name="rickOrMorty" value={rickOrMorty} onChange={handleRickOrMorty} className="form-control"/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="dimension">Dimension</label>
+                            <input type="text" name="dimension" value={dimension} onChange={handleDimension} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
