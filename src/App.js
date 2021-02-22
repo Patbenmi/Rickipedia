@@ -32,6 +32,33 @@ function App() {
   // set state values
   let [currentUser, setCurrentUser] = useState("");
   let [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [characters, setCharacters] = useState([])
+  const [episodes, setEpisodes] = useState([])
+  const [locations, setLocations] = useState([])
+
+  useEffect(() => {
+    fetch('API_info_here')
+    .then(res => res.json())
+    .then(characterData => {
+      setCharacters(characterData)
+    })
+  }, [])
+
+  useEffect(() => {
+    fetch('API_info_here')
+    .then(res => res.json())
+    .then(episodeData => {
+      setEpisodes(episodeData)
+    })
+  }, [])
+
+  useEffect(() => {
+    fetch('API_info_here')
+    .then(res => res.json())
+    .then(locationData => {
+      setLocations(locationData)
+    })
+  }, [])
 
   useEffect(() => {
     let token;
@@ -77,10 +104,10 @@ function App() {
           <Route exact path="/" component={ Welcome } />
           
           <Route path="/home" component={ Home } user={currentUser}/>
-          <Route path="/characters" component={ Characters } user={currentUser}/>
-          <Route path="/locations" component={ Locations } user={currentUser}/>
+          <Route path="/characters" component={ Characters } user={currentUser} characters={characters}/>
+          <Route path="/locations" component={ Locations } user={currentUser} locations={locations}/>
           <Route path="/theories" component={ Theories } user={currentUser}/>
-          <Route path="/episodes" component={ Episodes } user={currentUser}/>
+          <Route path="/episodes" component={ Episodes } user={currentUser} episodes={episodes}/>
           
         </Switch>
       </div>

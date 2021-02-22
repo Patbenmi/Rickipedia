@@ -1,17 +1,19 @@
 import React from 'react';
 
-
-
-function Characters() {
-    
-    
-    
+function Characters(props) {
     return(
         <div>
-            <h1>
-                {console.log('hit Character route')}
-                Characters
-            </h1>
+            {props.characters.map((character, i) => {
+                return (
+                    <li>
+                        <h1>{character.name}</h1>
+                        <img src={character.image}></img>
+                        <p>Species: {character.species}</p>
+                        <p>Status: {character.status}</p>
+                        <p>Origin: {character.origin}</p>
+                    </li>
+                )
+            })}
         </div>
     )
 }
