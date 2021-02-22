@@ -1,18 +1,9 @@
 import React from 'react';
 
 function Locations(props) {
+    console.log(props)
     return(
-        <div>
-            {props.locations.map((location, i) => {
-                return (
-                    <li>
-                        <h1>{location.name}</h1>
-                        <p>Type: {location.type}</p>
-                        <p>Dimension: {location.dimension}</p>
-                    </li>
-                )
-            })}
-        </div>
+        <div></div>
     )
 }
 
