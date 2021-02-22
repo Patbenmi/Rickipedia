@@ -2,13 +2,16 @@ import React from 'react';
 
 function Characters(props) {
     return(
-       <ul>
+       <div>
            {props.characters.map(character => (
                <>
-               <li>{character.name}</li>
+               <img src={character.image}></img>
+               <h1>{character.name}</h1>
+               <h4>Species: {character.species}</h4>
+               <h4>Status: {character.status}</h4>
                </>
            ))}
-       </ul>
+       </div>
     )
 }
      
