@@ -4,6 +4,7 @@ html {
 }
 body {
   margin-bottom: 60px; /* Margin bottom by footer height */
+  cursor: url('https://drive.google.com/file/d/1NK-IPMAQBNT2zsh_ndPXIsSa4z7PXTqb/view?usp=sharing'), default;
 }
 .footer {
   position: absolute;
