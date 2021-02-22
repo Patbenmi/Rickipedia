@@ -15,7 +15,6 @@ import Characters from './components/Rickipedia/Characters'
 import Locations from './components/Rickipedia/Locations'
 import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
-// const axios = require('axios')
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -34,7 +33,7 @@ function App() {
   const [locations, setLocations] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8000/wiki/characters')
+    fetch('http://localhost:8000/characters')
     .then(res => res.json())
     .then(characterData => {
       setCharacters(characterData)
@@ -101,8 +100,8 @@ function App() {
           <Route exact path="/" component={ Welcome } />
           
           <Route path="/home" component={ Home } user={currentUser}/>
-          <Route path="/characters" render={() => <Characters characters={characters} /> }/>
-          <Route path="/locations" render={() => <Locations locations={locations} /> }/>
+          <Route path="/characters" render={()=>  < Characters characters={characters}/>}/>
+          <Route path="/locations" component={ Locations } user={currentUser} locations={locations}/>
           <Route path="/theories" component={ Theories } user={currentUser}/>
           <Route path="/episodes" render={() => <Episodes episodes={episodes} /> }/>
           
