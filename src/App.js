@@ -35,6 +35,7 @@ function App() {
 
 useEffect(() => {
   fetch('http://localhost:8000/wiki/characters')
+
     .then(res => res.json())
     .then(characterData => {
       setCharacters(characterData)
@@ -100,13 +101,31 @@ return (
         <PrivateRoute path="/profile" component={Profile} user={currentUser} />
         <Route exact path="/" component={Welcome} />
 
-        <Route path="/home" component={Home} user={currentUser} />
-        <Route path="/characters" render={() => <Characters characters={characters} />} />
-        <Route path="/locations" render={() => <Locations locations={locations} />} />
-        <Route path="/theories" component={Theories} user={currentUser} />
-        <Route path="/episodes" render={() => <Episodes episodes={episodes} />} />
+  console.log('Current User', currentUser);
+  console.log('Authenicated', isAuthenticated);
 
-      </Switch>
+  return (
+    <div>
+      <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
+      <div className="container mt-5">
+        <Switch>
+          <Route path="/signup" component={ Signup } />
+          <Route 
+            path="/login" 
+            render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
+          <Route path="/about" component={ About } />
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+          <Route exact path="/" component={ Welcome } />
+          
+          <Route path="/home" component={ Home } user={currentUser}/>
+          <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
+          <Route path="/locations" render={()=>  <Locations locations={locations}/>}/>
+          <Route path="/theories" component={ Theories } user={currentUser}/>
+          <Route path="/episodes" render={() => <Episodes episodes={episodes} /> }/>
+          
+        </Switch>
+      </div>
+      <Footer />
     </div>
     <Footer />
   </div>
