@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios"
 
 function Characters(props) {
+<<<<<<< HEAD
 
     props.getCharacters()
     
@@ -19,7 +20,14 @@ function Characters(props) {
                 )
             })} */}
         </div>
+=======
+    console.log(props)
+    return(
+       <div></div>
+>>>>>>> 77d1506dcc9ffbdcfb5949737d9cb61c3c8a72de
     )
 }
+     
+
 
 export default Characters
