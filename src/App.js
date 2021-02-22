@@ -41,7 +41,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetch('API_info_here')
+    fetch('http://localhost:8000/wiki/episodes')
     .then(res => res.json())
     .then(episodeData => {
       setEpisodes(episodeData)
@@ -49,7 +49,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetch('API_info_here')
+    fetch('http://localhost:8000/wiki/locations')
     .then(res => res.json())
     .then(locationData => {
       setLocations(locationData)
@@ -103,7 +103,7 @@ function App() {
           <Route path="/characters" render={()=>  < Characters characters={characters}/>}/>
           <Route path="/locations" component={ Locations } user={currentUser} locations={locations}/>
           <Route path="/theories" component={ Theories } user={currentUser}/>
-          <Route path="/episodes" component={ Episodes } user={currentUser} episodes={episodes}/>
+          <Route path="/episodes" render={() => <Episodes episodes={episodes} /> }/>
           
         </Switch>
       </div>
