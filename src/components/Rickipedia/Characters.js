@@ -5,7 +5,6 @@ function Characters(props) {
     console.log(props)
     return(
        <div>
-           <h1>soem</h1>
        </div>
     )
 }
