@@ -89,22 +89,6 @@ console.log('Authenicated', isAuthenticated);
 
 return (
   <div>
-    <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
-    <div className="container mt-5">
-      <Switch>
-        <Route path="/signup" component={Signup} />
-        <Route
-          path="/login"
-          render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} />}
-        />
-        <Route path="/about" component={About} />
-        <PrivateRoute path="/profile" component={Profile} user={currentUser} />
-        <Route exact path="/" component={Welcome} />
-
-  console.log('Current User', currentUser);
-  console.log('Authenicated', isAuthenticated);
-
-  return (
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
