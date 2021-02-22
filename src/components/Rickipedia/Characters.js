@@ -1,20 +1,19 @@
 import React from 'react';
+import '../../../src/App.css'
 
 function Characters(props) {
     return(
-       <div>
+       <div className="characterCard">
            {props.characters.map(character => (
                <>
-               <img src={character.image}></img>
-               <h1>{character.name}</h1>
-               <h4>Species: {character.species}</h4>
-               <h4>Status: {character.status}</h4>
+                <img className="characterPic" src={character.image}></img>
+                <h4>{character.name}</h4>
+                <p>Species: {character.species}</p>
+                <p>Status: {character.status}</p>
                </>
            ))}
        </div>
     )
 }
      
-
 export default Characters
-
