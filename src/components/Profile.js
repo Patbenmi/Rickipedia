@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './Login'
 import { Link } from 'react-router-dom';
 
 const Profile = (props) => {
@@ -10,6 +11,8 @@ const Profile = (props) => {
         <p><strong>You are a:</strong> {props.user.rickOrMorty}</p>
         <p><strong>Dimension:</strong> {props.user.dimension}</p> 
         <p><strong>ID:</strong> {props.user.id}</p> 
+        {console.log('11111', props.user)}
+
     </div>) : <h4>Loading...</h4>
 
     const errorDiv = () => {
