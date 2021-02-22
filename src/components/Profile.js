@@ -12,6 +12,9 @@ const Profile = (props) => {
         <p><strong>Dimension:</strong> {props.user.dimension}</p> 
         <p><strong>ID:</strong> {props.user.id}</p> 
         {console.log('11111', props.user)}
+        <form>
+            {/* <label for= ></label> */}
+        </form>
 
     </div>) : <h4>Loading...</h4>
 

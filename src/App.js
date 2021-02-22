@@ -16,10 +16,6 @@ import Locations from './components/Rickipedia/Locations'
 import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
 
-
-
-
-
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
   return <Route {...rest} render={(props) => {
@@ -37,7 +33,7 @@ function App() {
   const [locations, setLocations] = useState([])
 
   useEffect(() => {
-    fetch('API_info_here')
+    fetch('http://localhost:8000/characters')
     .then(res => res.json())
     .then(characterData => {
       setCharacters(characterData)
@@ -104,7 +100,7 @@ function App() {
           <Route exact path="/" component={ Welcome } />
           
           <Route path="/home" component={ Home } user={currentUser}/>
-          <Route path="/characters" component={ Characters } user={currentUser} characters={characters}/>
+          <Route path="/characters" render={()=>  < Characters characters={characters}/>}/>
           <Route path="/locations" component={ Locations } user={currentUser} locations={locations}/>
           <Route path="/theories" component={ Theories } user={currentUser}/>
           <Route path="/episodes" component={ Episodes } user={currentUser} episodes={episodes}/>
