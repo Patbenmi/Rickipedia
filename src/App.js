@@ -15,7 +15,6 @@ import Characters from './components/Rickipedia/Characters'
 import Locations from './components/Rickipedia/Locations'
 import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
-// const axios = require('axios')
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -33,9 +32,14 @@ function App() {
   const [episodes, setEpisodes] = useState([])
   const [locations, setLocations] = useState([])
 
+<<<<<<< HEAD
 
 useEffect(() => {
   fetch('http://localhost:8000/wiki/characters')
+=======
+  useEffect(() => {
+    fetch('http://localhost:8000/characters')
+>>>>>>> b13ab2e4186b6417174ae94fb5fd78ff378ea51a
     .then(res => res.json())
     .then(characterData => {
       setCharacters(characterData)
@@ -101,6 +105,7 @@ return (
         <PrivateRoute path="/profile" component={Profile} user={currentUser} />
         <Route exact path="/" component={Welcome} />
 
+<<<<<<< HEAD
         <Route path="/home" component={Home} user={currentUser} />
         <Route path="/characters" render={() => <Characters characters={characters} />} />
         <Route path="/locations" render={() => <Locations locations={locations} />} />
@@ -108,6 +113,34 @@ return (
         <Route path="/episodes" render={() => <Episodes episodes={episodes} />} />
 
       </Switch>
+=======
+  console.log('Current User', currentUser);
+  console.log('Authenicated', isAuthenticated);
+
+  return (
+    <div>
+      <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
+      <div className="container mt-5">
+        <Switch>
+          <Route path="/signup" component={ Signup } />
+          <Route 
+            path="/login" 
+            render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
+          />
+          <Route path="/about" component={ About } />
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+          <Route exact path="/" component={ Welcome } />
+          
+          <Route path="/home" component={ Home } user={currentUser}/>
+          <Route path="/characters" render={()=>  < Characters characters={characters}/>}/>
+          <Route path="/locations" component={ Locations } user={currentUser} locations={locations}/>
+          <Route path="/theories" component={ Theories } user={currentUser}/>
+          <Route path="/episodes" render={() => <Episodes episodes={episodes} /> }/>
+          
+        </Switch>
+      </div>
+      <Footer />
+>>>>>>> b13ab2e4186b6417174ae94fb5fd78ff378ea51a
     </div>
     <Footer />
   </div>

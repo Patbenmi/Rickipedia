@@ -11,10 +11,11 @@ const Signup = () => {
     let [password, setPassword] = useState('');
     let [confirmPassword, setConfirmPassword] = useState('');
     let [redirect, setRedirect] = useState(false);
+    console.log('111', rickOrMorty)
 
     const handleUserName = (e) => {
         setUserName(e.target.value);
-        console.log('22222', userName)
+       
     }
     const handleEmail = (e) => {
         setEmail(e.target.value);
