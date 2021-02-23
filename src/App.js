@@ -12,6 +12,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Home from './components/Rickipedia/Home'
 import Characters from './components/Rickipedia/Characters'
+import Character from './components/Rickipedia/Character'
 import Locations from './components/Rickipedia/Locations'
 import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
@@ -102,6 +103,7 @@ return (
           <Route exact path="/" component={ Welcome } />
           <Route path="/home" component={ Home } user={currentUser}/>
           <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
+          <Route path="/character/:id" render={(props)=>  <Character {...props} characters={characters}/>}/>
           <Route path="/locations" render={()=>  <Locations locations={locations}/>}/>
           <Route path="/theories" component={ Theories } user={currentUser}/>
           <Route path="/episodes" render={() => <Episodes episodes={episodes} /> }/>
