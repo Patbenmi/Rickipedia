@@ -20,5 +20,9 @@ body {
 }
 
 .characterPic {
-  width: 25vw;
+  width: 10vw;
+}
+
+p {
+  font-size: 12px;
 }
