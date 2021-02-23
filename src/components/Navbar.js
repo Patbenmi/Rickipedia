@@ -23,8 +23,12 @@ const Navbar = (props) => {
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/episodes"> EPISODES </NavLink>
-                        </li>                        <li className="nav-item">
+                        </li>                        
+                        <li className="nav-item">
                             <NavLink className="nav-link" to="/locations"> LOCATIONS </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/update"> UPDATE PROFILE</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/theories"></NavLink>

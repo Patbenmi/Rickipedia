@@ -1,9 +1,21 @@
 import React from 'react';
 import Login from './Login'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+const axios = require('axios')
+require('dotenv').config()
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Profile = (props) => {
     console.log(props);
+
+    const handleDelete = (e) => {
+        e.preventDefault()
+        axios.post(`${REACT_APP_SERVER_URL}/api/profile`, props.user)
+        .then(response => {
+            console.log(response)
+        })
+    }
+
     const userData = props.user ? 
     (<div>
         <h1>Profile</h1>
@@ -12,8 +24,8 @@ const Profile = (props) => {
         <p><strong>Dimension:</strong> {props.user.dimension}</p> 
         <p><strong>ID:</strong> {props.user.id}</p> 
         {console.log('11111', props.user)}
-        <form>
-            {/* <label for= ></label> */}
+        <form onSubmit={handleDelete}>
+            <button type="submit" className="btn btn-primary float-right">Delete</button>
         </form>
 
     </div>) : <h4>Loading...</h4>
