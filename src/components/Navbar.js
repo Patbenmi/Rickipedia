@@ -28,9 +28,6 @@ const Navbar = (props) => {
                             <NavLink className="nav-link" to="/locations"> LOCATIONS </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/update"> UPDATE PROFILE</NavLink>
-                        </li>
-                        <li className="nav-item">
                             <NavLink className="nav-link" to="/theories"></NavLink>
                         </li>
                     </ul>
@@ -39,6 +36,9 @@ const Navbar = (props) => {
                             ? <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/update"> UPDATE PROFILE</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <span onClick={props.handleLogout} className="nav-link logout-link">Logout</span>
