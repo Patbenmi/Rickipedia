@@ -36,7 +36,6 @@ function App() {
 
 useEffect(() => {
   fetch('http://localhost:8000/wiki/characters')
-
     .then(res => res.json())
     .then(characterData => {
       setCharacters(characterData)

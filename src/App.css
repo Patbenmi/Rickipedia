@@ -21,3 +21,24 @@ body {
 .characterPic {
   width: 25vw;
 }
+
+ul {
+  list-style-type: none;
+}
+
+Locations {
+  background-color: black;
+
+}
+
+.locationBody {
+  background: url("./EveryD.jpg") no-repeat fixed ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.locations {
+  border-radius: 1%;
+  background: rgb(214,214,214);
+  background: linear-gradient(114deg, rgba(214,214,214,1) 0%, rgba(255,255,255,0.196516106442577) 30%, rgba(0,0,0,0.37298669467787116) 52%, rgba(255,255,255,0) 100%);
+}
