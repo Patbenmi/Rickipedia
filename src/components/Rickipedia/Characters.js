@@ -9,7 +9,6 @@ function Characters(props) {
                 <img className="characterPic" src={character.image}></img>
                 <h5>{character.name}</h5>
                 <p>Species: {character.species} | Status: {character.status}</p>
-                {/* <p>Status: {character.status}</p> */}
                </>
            ))}
        </div>
