@@ -14,8 +14,11 @@ body {
 }
 
 .characterCard {
-  display: inline-block;
+  /* background: url('./spaceship.jpg') no-repeat fixed; */
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
+  color:black;
 }
 
 .characterPic {
