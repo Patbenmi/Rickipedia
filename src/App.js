@@ -12,10 +12,12 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Home from './components/Rickipedia/Home'
 import Characters from './components/Rickipedia/Characters'
+import Character from './components/Rickipedia/Character'
 import Locations from './components/Rickipedia/Locations'
 import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
 import Episode from './components/Rickipedia/Episode'
+import UpdateProfile from './components/updateProfile'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -99,9 +101,11 @@ return (
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
           <Route path="/about" component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+          <PrivateRoute path="/update" component={ UpdateProfile } user={currentUser} />
           <Route exact path="/" component={ Welcome } />
           <Route path="/home" component={ Home } user={currentUser}/>
           <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
+          <Route path="/character/:id" render={(props)=>  <Character {...props} characters={characters}/>}/>
           <Route path="/locations" render={()=>  <Locations locations={locations}/>}/>
           <Route path="/theories" component={ Theories } user={currentUser}/>
           <Route path="/episodes" render={() => <Episodes episodes={episodes} /> }/>
