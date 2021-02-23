@@ -50,6 +50,7 @@ Locations {
   background: url("./EveryD.jpg") no-repeat fixed ;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .locations {
@@ -61,3 +62,28 @@ Locations {
 #navbarsExample07 {
   font-size: 12px;
 }
+
+.locations ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.location ul li:hover ul {
+  background: #555;
+  display: block;
+}
+
+.location ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+
+.location ul li ul li { 
+  background: #555; 
+  display: block; 
+}
+
