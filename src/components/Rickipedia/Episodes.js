@@ -1,21 +1,15 @@
 import React from 'react';
 import '../../../src/App.css'
 import { Link } from 'react-router-dom'
+import Episode from './Episode'
 
 function Episodes(props) {
     console.log(props)
     return(
         <div>
-            {props.episodes.map(episode => (
+            {props.episodes.map((episode, index) => (
                 <>
-                <p>{episode.date}</p>
-                <p>{episode.episode}</p>
-                <p>{episode.link}</p>
-                <p>{episode.name}</p>
-                <p>{episode.synopsis}</p>
-                {/* {episode.characters.map(character => (
-                    <p>{character}</p>
-                ))} */}
+                <li key={index}><Link to={`/episode/${index}`}>{episode.date}: {episode.episode} - {episode.name}</Link></li>
                 </>
             ))}
         </div>
