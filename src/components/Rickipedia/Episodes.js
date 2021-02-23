@@ -10,6 +10,7 @@ function Episodes(props) {
             {props.episodes.map((episode, index) => (
                 <>
                 <li key={index}><Link to={`/episode/${index}`}>{episode.date}: {episode.episode} - {episode.name}</Link></li>
+                <hr></hr>
                 </>
             ))}
         </div>
