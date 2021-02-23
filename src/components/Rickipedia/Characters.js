@@ -7,9 +7,8 @@ function Characters(props) {
            {props.characters.map(character => (
                <>
                 <img className="characterPic" src={character.image}></img>
-                <h4>{character.name}</h4>
-                <p>Species: {character.species}</p>
-                <p>Status: {character.status}</p>
+                <h5>{character.name}</h5>
+                <p>Species: {character.species} | Status: {character.status}</p>
                </>
            ))}
        </div>

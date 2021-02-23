@@ -5,7 +5,7 @@ const Navbar = (props) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
-                <Link className="navbar-brand" to="/">MERN Auth</Link>
+                <Link className="navbar-brand" to="/">Rickipedia and Mortiverse</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="#navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -13,18 +13,18 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link" exact to="/">Home</NavLink>
+                            <NavLink className="nav-link" exact to="/">HOME </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/about">About</NavLink>
+                            <NavLink className="nav-link" to="/about"> ABOUT </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/characters"> Characters </NavLink>
+                            <NavLink className="nav-link" to="/characters"> CHARACTERS </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/episodes"> Episodes </NavLink>
+                            <NavLink className="nav-link" to="/episodes"> EPISODES </NavLink>
                         </li>                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/locations"> Locations </NavLink>
+                            <NavLink className="nav-link" to="/locations"> LOCATIONS </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/theories"></NavLink>
