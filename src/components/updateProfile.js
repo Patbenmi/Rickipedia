@@ -25,10 +25,11 @@ export default function UpdateDeleteProfile(props){
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        const updatedUser = { userName, email, dimension, rickOrMorty }
-        axios.post(`${REACT_APP_SERVER_URL}/api/update`, updatedUser)
+        const updatedUser = { id: props.user.id, userName, email, dimension, rickOrMorty }
+        axios.put(`${REACT_APP_SERVER_URL}/api/update`, updatedUser)
         .then(response => {
                 console.log(response);
+                props.setCurrentUser(updatedUser)
             })
             .catch(error => console.log(error));
         }
@@ -41,11 +42,11 @@ export default function UpdateDeleteProfile(props){
                     <form onSubmit={handleUpdate}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input type="email" name="email" default={props.user.email} onChange={handleEmail} className="form-control"/>
+                            <input type="email" name="email" defaultValue={props.user.email} onChange={handleEmail} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="userName">User Name</label>
-                            <input type="text" name="userName" default={props.user.userName} onChange={handleUserName} className="form-control"/>
+                            <input type="text" name="userName" defaultValue={props.user.userName} onChange={handleUserName} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="rickOrMorty">Rick?: </label>
@@ -55,7 +56,7 @@ export default function UpdateDeleteProfile(props){
                         </div>
                         <div className="form-group">
                             <label htmlFor="dimension">Dimension</label>
-                            <input type="text" name="dimension" default={props.user.dimension} onChange={handleDimension} className="form-control"/>
+                            <input type="text" name="dimension" defaultValue={props.user.dimension} onChange={handleDimension} className="form-control"/>
                         </div>
                         <button type="submit" className="btn btn-primary float-right">Update</button>
                     </form>

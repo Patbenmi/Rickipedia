@@ -1,15 +1,15 @@
+import React from 'react'
 
-
-
-
-function Theories() {
+function Theories(props) {
     return(
-
-        "Your theories"
+        <div>
+            {props.theories.map(theory => (
+                <div>
+                    <p>{theory.body}</p>
+                </div>
+            ))}
+        </div>
     )
-    
-    
 }
-
 
 export default Theories
