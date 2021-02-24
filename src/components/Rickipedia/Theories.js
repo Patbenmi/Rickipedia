@@ -7,13 +7,19 @@ function Theories(props) {
 
     const [theory, setTheory] = useState('')
     const [redirect, setRedirect] = useState(false)
+    const [author, setAuthor] = useState('')
+
+    const handleComment = (e) => {
+        setTheory
+    }
 
     const handleTheory = (e) => {
         setTheory(e.target.value)
+        setAuthor(props.user.userName)
     }
 
     const handleSubmit = () => {
-        const newTheory = { theory }
+        const newTheory = { author, theory }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/theories`, newTheory)
             .then(response => {
                 console.log(response)
@@ -35,20 +41,38 @@ function Theories(props) {
                             </div>
                             <button type="submit">Submit</button>
                         </form>
-                        {props.theories.map(theory => (
+                        {props.theories.reverse().map(theory => (
                             <div>
                                 <p>Posited by: {theory.author}</p>
                                 <h2>{theory.body}</h2>
-                                <textarea type="text" defaultValue="Leave a comment" />
-                                <button type="submit">Submit</button>
+                                <ul>
+                                    {theory.comments.reverse().map(comment => (
+                                    <li>
+                                        <p>{comment.author}</p>
+                                        <p>{comment.body}</p>
+                                    </li>
+                                    ))}
+                                </ul>
+                                <form onSubmit={handleComment}>
+                                    <textarea type="text" defaultValue="Leave a comment" />
+                                    <button type="submit">Submit</button>
+                                </form>
                             </div>
                         ))}
                     </div>
                     : <div>
-                        {props.theories.map(theory => (
+                        {props.theories.reverse().map(theory => (
                             <div>
                                 <p>Posited by: {theory.author}</p>
                                 <h2>{theory.body}</h2>
+                                <ul>
+                                    {theory.comments.reverse().map(comment => (
+                                    <li>
+                                        <p>{comment.author}</p>
+                                        <p>{comment.body}</p>
+                                    </li>
+                                    ))}
+                                </ul>
                             </div>
                         ))}
                     </div>

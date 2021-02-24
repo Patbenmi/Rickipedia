@@ -10,6 +10,10 @@ const Welcome = () => {
             <div className="sectionTwo">
                 <h2>Episodes</h2>
             </div>
+            <hr></hr>
+            <div className="charactersSection">
+                <button>View Episodes</button>
+                </div>
         </div>
     );
 }
