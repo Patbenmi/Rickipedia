@@ -11,9 +11,7 @@ const Navbar = (props) => {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarsExample07">
-                    {
-                        props.isAuth
-                        ? <ul className="navbar-nav mr-auto">
+                        <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/theories">THEORIES</NavLink>
                             </li>
@@ -33,24 +31,7 @@ const Navbar = (props) => {
                                 <NavLink className="nav-link" to="/locations"> LOCATIONS </NavLink>
                             </li>
                         </ul>
-                        : <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <NavLink className="nav-link" exact to="/">HOME </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/about"> ABOUT </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/characters"> CHARACTERS </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/episodes"> EPISODES </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/locations"> LOCATIONS </NavLink>
-                            </li>
-                        </ul>
-                    }{
+                    {
                         props.isAuth
                             ? <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
