@@ -17,7 +17,7 @@ import Locations from './components/Rickipedia/Locations'
 import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
 import Episode from './components/Rickipedia/Episode'
-import UpdateDeleteProfile from './components/updateProfile'
+import UpdateProfile from './components/updateProfile'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -101,9 +101,7 @@ return (
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
           <Route path="/about" component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
-          <Route 
-            path="/update" 
-            render={ (props) => <UpdateDeleteProfile {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
+          <PrivateRoute path="/update" component={ UpdateProfile } user={currentUser} setCurrentUser={setCurrentUser} />
           <Route exact path="/" component={ Welcome } />
           <Route path="/home" component={ Home } user={currentUser}/>
           <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
