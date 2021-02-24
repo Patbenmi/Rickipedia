@@ -34,7 +34,15 @@ function App() {
   const [characters, setCharacters] = useState([])
   const [episodes, setEpisodes] = useState([])
   const [locations, setLocations] = useState([])
+  const [theories, setTheories] = useState([])
 
+useEffect(() => {
+  fetch('http://localhost:8000/wiki/theories')
+  .then(res => res.json())
+  .then(theoryData => {
+    setTheories(theoryData)
+  })
+}, [])
 
 useEffect(() => {
   fetch('http://localhost:8000/wiki/characters')
@@ -107,8 +115,8 @@ return (
           <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
           <Route path="/character/:id" render={(props)=>  <Character {...props} characters={characters}/>}/>
           <Route path="/locations" render={()=>  <Locations locations={locations}/>}/>
-          <Route path="/theories" component={ Theories } user={currentUser}/>
-          <Route path="/episodes" render={() => <Episodes episodes={episodes} /> }/>
+          <Route path="/theories" render={()=>  <Theories theories={theories}/>}/>
+          <Route path="/episodes" render={()=> <Episodes episodes={episodes} /> }/>
           <Route path="/episode/:id" render={(props) => <Episode {...props} episodes={episodes} /> }/>
         </Switch>
       </div>
