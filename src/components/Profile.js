@@ -8,14 +8,17 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const Profile = (props) => {
     console.log(props);
 
+    
     const handleDelete = (e) => {
         e.preventDefault()
-        axios.post(`${REACT_APP_SERVER_URL}/api/profile`, props.user)
+        const deleteUser = { id: props.user.params }
+        console.log('2222', deleteUser)
+        axios.delete(`${REACT_APP_SERVER_URL}/api/profile`, deleteUser)
         .then(response => {
             console.log(response)
+            
         })
     }
-
     const userData = props.user ? 
     (<div>
         <h1>Profile</h1>
