@@ -7,13 +7,15 @@ function Theories(props) {
 
     const [theory, setTheory] = useState('')
     const [redirect, setRedirect] = useState(false)
+    const [author, setAuthor] = useState('')
 
     const handleTheory = (e) => {
         setTheory(e.target.value)
+        setAuthor(props.user.userName)
     }
 
     const handleSubmit = () => {
-        const newTheory = { theory }
+        const newTheory = { author, theory }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/theories`, newTheory)
             .then(response => {
                 console.log(response)

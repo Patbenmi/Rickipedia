@@ -115,7 +115,7 @@ return (
           <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
           <Route path="/character/:id" render={(props)=>  <Character {...props} characters={characters}/>}/>
           <Route path="/locations" render={()=>  <Locations locations={locations}/>}/>
-          <Route path="/theories" render={()=>  <Theories theories={theories} isAuth={isAuthenticated}/>}/>
+          <Route path="/theories" render={()=>  <Theories theories={theories} isAuth={isAuthenticated} user={currentUser}/>}/>
           <Route path="/episodes" render={()=> <Episodes episodes={episodes} /> }/>
           <Route path="/episode/:id" render={(props) => <Episode {...props} episodes={episodes} /> }/>
         </Switch>
