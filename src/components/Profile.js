@@ -9,6 +9,7 @@ const Profile = (props) => {
     let [redirect, setRedirect] = useState(false)
     console.log(props);
 
+    
     const handleDelete = (e) => {
         e.preventDefault()
         axios.post(`${REACT_APP_SERVER_URL}/api/profile`, {id: props.user.id})
@@ -17,7 +18,6 @@ const Profile = (props) => {
             setRedirect(true)
         })
     }
-
     const userData = props.user ? 
     (<div>
         <h1>Profile</h1>
