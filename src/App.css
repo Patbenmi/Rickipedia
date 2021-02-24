@@ -54,36 +54,13 @@ Locations {
 }
 
 .locations {
-  border-radius: 1%;
-  background: rgb(214,214,214);
-  background: linear-gradient(114deg, rgba(214,214,214,1) 0%, rgba(255,255,255,0.196516106442577) 30%, rgba(0,0,0,0.37298669467787116) 52%, rgba(255,255,255,0) 100%);
-}
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 16%, rgba(182,182,182,0.7791305205047319) 35%, rgba(0,0,0,0.561464905362776) 39%, rgba(255,255,255,0) 49%, rgba(0,0,0,0) 80%, rgba(255,255,255,0) 100%);
+  color: white;
 
+}
 #navbarsExample07 {
   font-size: 12px;
 }
 
-.locations ul {
-  display: inline;
-  margin: 0;
-  padding: 0;
-}
-
-
-
-.location ul li:hover ul {
-  background: #555;
-  display: block;
-}
-
-.location ul li ul {
-  position: absolute;
-  width: 200px;
-  display: none;
-}
-
-.location ul li ul li { 
-  background: #555; 
-  display: block; 
-}
 
