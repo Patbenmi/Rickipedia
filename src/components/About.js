@@ -4,8 +4,10 @@ const About = () => {
     return (
         <div className="aboutPage">
             <div className="aboutIntro">
-                <h2>Robot: What is my purpose?
-                Rick: You pass butter.</h2>
+                <h2>Robot: What is my purpose?</h2>
+                <h2>Rick: You pass butter</h2>
+                <br>
+                </br>
                 <p>
                     Let's talk about our project!
                 </p>
@@ -13,6 +15,8 @@ const About = () => {
             <hr></hr>
             <div className="aboutTeam">
                 <h2>We’re the only friends we’ve got, Morty!</h2>
+                <br>
+                </br>
                 <p>The amazing humans that built this.</p>
             </div>
 
