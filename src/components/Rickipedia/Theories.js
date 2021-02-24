@@ -25,38 +25,36 @@ function Theories(props) {
 
     return (
         <div>
-                {
-                    props.isAuth
-
-            ?<div>
-                         <form onSubmit={handleSubmit}>
+            {
+                props.isAuth
+                    ? <div>
+                        <form onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="theory">Got a Theory?</label>
                                 <textarea type="text" name="theory" defaultValue="What's your theo...brrrrp...ry?" onChange={handleTheory} />
                             </div>
                             <button type="submit">Submit</button>
                         </form>
-                
-                {props.theories.map(theory => (
-                    <div>
-                        <p>Posited by: {theory.author}</p>
-                        <h2>{theory.body}</h2>
-                        <textarea type="text" defaultValue="Leave a comment" />
-                        <button type="submit">Submit</button>
+                        {props.theories.map(theory => (
+                            <div>
+                                <p>Posited by: {theory.author}</p>
+                                <h2>{theory.body}</h2>
+                                <textarea type="text" defaultValue="Leave a comment" />
+                                <button type="submit">Submit</button>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
                     : <div>
-                {props.theories.map(theory => (
-                    <div>
-                        <p>Posited by: {theory.author}</p>
-                        <h2>{theory.body}</h2>
-                        <textarea type="text" defaultValue="Leave a comment" />
-                        <button type="submit">Submit</button>
+                        {props.theories.map(theory => (
+                            <div>
+                                <p>Posited by: {theory.author}</p>
+                                <h2>{theory.body}</h2>
+                                <textarea type="text" defaultValue="Leave a comment" />
+                                <button type="submit">Submit</button>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-                }
+            }
         </div>
     )
 }
