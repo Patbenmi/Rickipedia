@@ -12,19 +12,10 @@ const Profile = (props) => {
     
     const handleDelete = (e) => {
         e.preventDefault()
-<<<<<<< HEAD
-        const deleteUser = { id: props.user.params }
-        console.log('2222', deleteUser)
-        axios.delete(`${REACT_APP_SERVER_URL}/api/profile`, deleteUser)
-        .then(response => {
-            console.log(response)
-            
-=======
         axios.post(`${REACT_APP_SERVER_URL}/api/profile`, {id: props.user.id})
         .then(response => {
             console.log(response)
             setRedirect(true)
->>>>>>> 252c197595d6914f52d8a03ac282bb01a8f84740
         })
     }
     const userData = props.user ? 
