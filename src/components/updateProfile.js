@@ -47,13 +47,11 @@ export default function UpdateDeleteProfile(props) {
                     <form onSubmit={handleUpdate}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                          
                             <input type="email" name="email" default ={props.user.email} onChange={handleEmail} className="form-control" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="userName">User Name</label>
                             <input type="text" name="userName" default ={props.user.userName} onChange={handleUserName} className="form-control" />
-
                         </div>
                         <div className="form-group">
                             <label htmlFor="rickOrMorty">Rick?: </label>
@@ -63,7 +61,6 @@ export default function UpdateDeleteProfile(props) {
                         </div>
                         <div className="form-group">
                             <label htmlFor="dimension">Dimension</label>
-
                             <input type="text" name="dimension" default ={props.user.dimension} onChange={handleDimension} className="form-control" />
                         </div>
                         <button type="submit" className="btn btn-primary float-right">Update</button>

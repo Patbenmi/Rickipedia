@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Login from './Login'
 import { Link, Redirect } from 'react-router-dom';
 const axios = require('axios')
@@ -6,13 +6,15 @@ require('dotenv').config()
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Profile = (props) => {
+    let [redirect, setRedirect] = useState(false)
     console.log(props);
 
     const handleDelete = (e) => {
         e.preventDefault()
-        axios.post(`${REACT_APP_SERVER_URL}/api/profile`, props.user.id)
+        axios.post(`${REACT_APP_SERVER_URL}/api/profile`, {id: props.user.id})
         .then(response => {
             console.log(response)
+            setRedirect(true)
         })
     }
 
@@ -37,7 +39,7 @@ const Profile = (props) => {
             </div>
         );
     };
-    
+    if (redirect) return <Redirect to="/" />
     return (
         <div>
             { props.user ? userData : errorDiv() }
