@@ -37,7 +37,7 @@ function App() {
   const [theories, setTheories] = useState([])
 
 useEffect(() => {
-  fetch('http://localhost:8000/theory/theories')
+  fetch('http://localhost:8000/wiki/theories')
   .then(res => res.json())
   .then(theoryData => {
     setTheories(theoryData)
