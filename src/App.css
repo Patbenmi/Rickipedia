@@ -41,10 +41,11 @@ body {
 }
 
 .characterPic {
+  border: solid 2px white;
   width: 10vw;
 }
 
-.charactersTitle {
+.charactersTitle, .episodesTitle {
   text-align: center;
 }
 
@@ -82,8 +83,10 @@ Locations {
 }
 
 .locations {
-  background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,0.5578606442577031) 0%, rgba(0,0,0,0.4738270308123249) 23%, rgba(0,0,0,0) 33%);
+  color: black;
+  border-radius: 1%;
+  background: rgb(214,214,214);
+  background: linear-gradient(114deg, rgba(214,214,214,1) 0%, rgba(255,255,255,0.196516106442577) 30%, rgba(0,0,0,0.37298669467787116) 52%, rgba(255,255,255,0) 100%);
 }
 #navbarsExample07 {
   font-size: 12px;

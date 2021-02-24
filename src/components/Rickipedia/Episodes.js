@@ -6,6 +6,12 @@ import Episode from './Episode'
 function Episodes(props) {
     console.log(props)
     return(
+        <div className="episodesPage">
+            <div className="episodesTitle">
+                <h1>Episodes</h1>
+                <br>
+                </br>
+            </div>
         <div>
             {props.episodes.map((episode, index) => (
                 <>
@@ -13,6 +19,7 @@ function Episodes(props) {
                 <hr></hr>
                 </>
             ))}
+        </div>
         </div>
     )
 }
