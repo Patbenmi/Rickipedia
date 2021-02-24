@@ -25,10 +25,13 @@ export default function UpdateDeleteProfile(props){
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        const updatedUser = { userName, email, dimension, rickOrMorty }
-        axios.post(`${REACT_APP_SERVER_URL}/api/update`, updatedUser)
+        console.log('Sanity Check!')
+        console.log(props.user.id)
+        const updatedUser = { id: props.user.id, userName, email, dimension, rickOrMorty }
+        axios.put(`${REACT_APP_SERVER_URL}/api/update`, updatedUser)
         .then(response => {
                 console.log(response);
+                props.setCurrentUser(updatedUser)
             })
             .catch(error => console.log(error));
         }
