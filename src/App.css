@@ -41,10 +41,11 @@ body {
 }
 
 .characterPic {
+  border: solid 2px white;
   width: 10vw;
 }
 
-.charactersTitle {
+.charactersTitle, .episodesTitle {
   text-align: center;
 }
 
@@ -81,6 +82,7 @@ Locations {
 }
 
 .locations {
+  color: black;
   border-radius: 1%;
   background: rgb(214,214,214);
   background: linear-gradient(114deg, rgba(214,214,214,1) 0%, rgba(255,255,255,0.196516106442577) 30%, rgba(0,0,0,0.37298669467787116) 52%, rgba(255,255,255,0) 100%);
