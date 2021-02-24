@@ -37,7 +37,10 @@ function Theories(props) {
             <div>
                 {props.theories.map(theory => (
                     <div>
-                        <p>{theory.body}</p>
+                        <p>Posited by: {theory.author}</p>
+                        <h2>{theory.body}</h2>
+                        <textarea type="text" defaultValue="Leave a comment"/>
+                        <button type="submit">Submit</button>
                     </div>
                 ))}
             </div>
