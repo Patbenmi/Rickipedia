@@ -23,9 +23,15 @@ body {
   text-align: center;
 }
 
-.characterCard {
-  display: inline-block;
+.aboutPage, .aboutIntro, .aboutTeam {
   text-align: center;
+}
+
+.characterCard {
+  display: grid;
+  grid-template-columns: repeat(6,180px);
+  margin: 0 auto;
+  /* text-align: center; */
 }
 
 .characterPic {
