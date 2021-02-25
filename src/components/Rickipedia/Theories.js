@@ -3,6 +3,9 @@ import { Redirect } from 'react-router-dom'
 import '../../../src/App.css'
 const axios = require('axios')
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
+const morty = "https://imgur.com/EU4dZFE"
+const rick = "https://imgur.com/OyfFeFG"
+let userPic
 
 
 function Theories(props) {
@@ -12,6 +15,7 @@ function Theories(props) {
     const [comment, setComment] = useState('')
     const [commenter, setCommenter] = useState('')
     const [theorist, setTheorist] = useState('')
+    const [userPic, setUserPic] = useState('')
 
 
     const handleComment = (e) => {
@@ -34,7 +38,7 @@ function Theories(props) {
             .catch(err => console.log(err))
     }
 
-
+ 
     const handleTheory = (e) => {
         e.preventDefault()
         setTheory(e.target.value)
@@ -57,6 +61,12 @@ function Theories(props) {
 
     if (redirect) return <Redirect to="/theories" />
 
+    if (props.user.rickOrMorty === 'Rick') {
+        setUserPic = rick
+    } else {
+        setUserPic = morty 
+    }
+
     return (
         <div className="theoriesPage">
             <div className="theoriesTitle">
@@ -78,8 +88,11 @@ function Theories(props) {
                             <div class="theoryReverse">
                             {props.theories.map(theory => (
                                 <div className="theoryComments">
-                                    <p>Posted by: <b>{theory.theorist}  </b> </p> 
-                                    {/* <p>a {props.user.rickOrMorty} </p> */}
+                                    
+                                   
+                                    <p>Posted by: <b>{theory.theorist} <p>a total {props.user.rickOrMorty} 
+                                    <img  src="{userPic}" alt='RickAndMorty'></img>
+                                    </p> </b> </p> 
                                     
                                     <h2 className="ab2">{theory.body}</h2>
                                     <ul>
