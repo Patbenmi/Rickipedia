@@ -1,5 +1,6 @@
 import React from 'react'
 import Comment from './Comment'
+import '../../App.css';
 
 export default function Theory(props) {
 
@@ -25,5 +26,6 @@ export default function Theory(props) {
         </ul>
       </div>
     </div>
+
   )
 }
