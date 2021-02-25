@@ -3,6 +3,9 @@ import { Link, Redirect } from 'react-router-dom';
 const axios = require('axios')
 require('dotenv').config()
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const morty = "https://i.imgur.com/7xo7koRl.gif"
+const rick = 'https://i.imgur.com/Z7GorP4l.gif'
+
 
 const Profile = (props) => {
     let [redirect, setRedirect] = useState(false)
@@ -24,9 +27,10 @@ const Profile = (props) => {
         <h1 className="ab1">Profile</h1>
         <p><strong>User Name:</strong> {props.user.userName}</p>
         <p><strong>You are a:</strong> {props.user.rickOrMorty}</p>
+        <img src={props.user.rickOrMorty==='Rick' ? rick : morty}/> 
         <p><strong>Dimension:</strong> {props.user.dimension}</p> 
-        <p><strong>ID:</strong> {props.user.id}</p> 
-        {console.log('11111', props.user)}
+        
+      
         <form>
             <button type="submit" onClick={handleDelete} className="btn btn-primary float-right" id="deleteBtn">Delete</button>
         </form>
