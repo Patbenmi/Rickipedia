@@ -10,17 +10,21 @@ function Theories(props) {
     const [theory, setTheory] = useState('')
     const [redirect, setRedirect] = useState(false)
     const [comment, setComment] = useState('')
+    const [commenter, setCommenter] = useState('')
+    const [theorist, setTheorist] = useState('')
 
 
     const handleComment = (e) => {
         setComment(e.target.value)
+        setCommenter(props.user.userName)
     }
 
     const handleSubmitComment = (e) => {
         const newComment = {
             theoryId: e.target.getAttribute('data-theory'),
             author: props.user.id,
-            comment
+            comment,
+            commenter
         }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/comments`, newComment)
             .then(response => {
@@ -34,12 +38,14 @@ function Theories(props) {
     const handleTheory = (e) => {
         e.preventDefault()
         setTheory(e.target.value)
+        setTheorist(props.user.userName)
     }
 
     const handleSubmit = () => {
         const newTheory = {
             author: props.user.id,
-            theory
+            theory,
+            theorist
         }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/theories`, newTheory)
             .then(response => {
@@ -71,14 +77,13 @@ function Theories(props) {
                             <hr></hr>
                             {props.theories.map(theory => (
                                 <div className="theoryComments">
-                                    <p>Posited by: {theory.author}</p>
+                                    <p>Posited by: <b>{theory.theorist}</b></p>
                                     <h2 className="ab2">{theory.body}</h2>
                                     <ul>
                                         <p>
                                             {theory.comments.map(comment => (
                                                 <li>
-                                                    <p>{comment.author}</p>
-                                                    <p>{comment.body}</p>
+                                                    <p><b>{comment.userName}</b>: {comment.body}</p>
                                                 </li>
                                             ))}
                                         </p>
@@ -95,13 +100,12 @@ function Theories(props) {
                         : <div>
                             {props.theories.map(theory => (
                                 <div>
-                                    <p>Posited by: {theory.author}</p>
+                                    <p>Posited by: <b>{theory.theorist}</b></p>
                                     <h2>{theory.body}</h2>
                                     <ul>
                                         {theory.comments.map(comment => (
                                             <li>
-                                                <p>{comment.author}</p>
-                                                <p>{comment.body}</p>
+                                                <p><b>{comment.userName}</b>: {comment.body}</p>
                                             </li>
                                         ))}
                                     </ul>
