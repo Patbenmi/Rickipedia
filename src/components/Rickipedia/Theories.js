@@ -9,9 +9,9 @@ function Theories(props) {
     const [redirect, setRedirect] = useState(false)
     const [author, setAuthor] = useState('')
 
-    const handleComment = (e) => {
-        setTheory
-    }
+    // const handleComment = (e) => {
+    //     setTheory
+    // }
 
     const handleTheory = (e) => {
         setTheory(e.target.value)
@@ -53,10 +53,10 @@ function Theories(props) {
                                     </li>
                                     ))}
                                 </ul>
-                                <form onSubmit={handleComment}>
+                                {/* <form onSubmit={handleComment}>
                                     <textarea type="text" defaultValue="Leave a comment" />
                                     <button type="submit">Submit</button>
-                                </form>
+                                </form> */}
                             </div>
                         ))}
                     </div>
