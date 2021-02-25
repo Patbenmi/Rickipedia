@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Login from './Login'
 import { Link, Redirect } from 'react-router-dom';
 const axios = require('axios')
 require('dotenv').config()
@@ -17,6 +16,7 @@ const Profile = (props) => {
             console.log(response)
             setRedirect(true)
             props.setIsAuthenticated(false)
+            props.handleLogout()
         })
     }
     const userData = props.user ? 

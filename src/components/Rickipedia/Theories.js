@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import Comment from './Comment'
-import Theory from './Theory'
+import { Redirect } from 'react-router-dom'
 import '../../../src/App.css'
 const axios = require('axios')
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
@@ -63,7 +61,7 @@ function Theories(props) {
         <div className="theoriesPage">
             <div className="theoriesTitle">
                 <h1 className="ab1">Theories</h1>
-                <img className="welcomeImage" src="https://media.giphy.com/media/l1UOmzUwFTGIuHyJdN/giphy.gif"></img>
+                <img className="welcomeImage" src="https://media.giphy.com/media/l1UOmzUwFTGIuHyJdN/giphy.gif" alt='RickAndMorty'></img>
             </div>
             <div className="theoriesInfo">
                 {

@@ -15,7 +15,7 @@ const About = () => {
             <hr></hr>
             <div className="aboutTeam">
                 <h2 className="ab1">We’re the only friends we’ve got, Morty!</h2>
-                <img className="welcomeImage" src="https://media.giphy.com/media/jrijP60lUxjUjpa7YF/giphy.gif"></img>
+                <img className="welcomeImage" src="https://media.giphy.com/media/jrijP60lUxjUjpa7YF/giphy.gif" alt='RickAndMorty'></img>
                 <p>The amazing humans that built this.</p>
             </div>
 
