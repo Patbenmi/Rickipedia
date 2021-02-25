@@ -17,17 +17,17 @@ function Theories(props) {
     }
 
     const handleSubmitComment = (e) => {
-        const newComment = { 
+        const newComment = {
             theoryId: e.target.getAttribute('data-theory'),
             author: props.user.id,
-            comment 
+            comment
         }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/comments`, newComment)
-        .then(response => {
-            console.log(response)
-            setRedirect(true)
-        })
-        .catch(err => console.log(err))
+            .then(response => {
+                console.log(response)
+                setRedirect(true)
+            })
+            .catch(err => console.log(err))
     }
 
 
@@ -39,7 +39,7 @@ function Theories(props) {
     const handleSubmit = () => {
         const newTheory = {
             author: props.user.id,
-            theory 
+            theory
         }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/theories`, newTheory)
             .then(response => {
@@ -69,14 +69,14 @@ function Theories(props) {
                                 <h2>{theory.body}</h2>
                                 <ul>
                                     {theory.comments.map(comment => (
-                                    <li>
-                                        <p>{comment.author}</p>
-                                        <p>{comment.body}</p>
-                                    </li>
+                                        <li>
+                                            <p>{comment.author}</p>
+                                            <p>{comment.body}</p>
+                                        </li>
                                     ))}
                                 </ul>
                                 <form data-theory={theory._id} onSubmit={handleSubmitComment}>
-                                    <textarea name="comment" type="text" defaultValue="Leave a comment" onChange={handleComment}/>
+                                    <textarea name="comment" type="text" defaultValue="Leave a comment" onChange={handleComment} />
                                     <button type="submit">Submit</button>
                                 </form>
                             </div>
@@ -89,20 +89,17 @@ function Theories(props) {
                                 <h2>{theory.body}</h2>
                                 <ul>
                                     {theory.comments.map(comment => (
-                                    <li>
-                                        <p>{comment.author}</p>
-                                        <p>{comment.body}</p>
-                                    </li>
+                                        <li>
+                                            <p>{comment.author}</p>
+                                            <p>{comment.body}</p>
+                                        </li>
                                     ))}
                                 </ul>
                             </div>
                         ))}
                     </div>
-                ))}
-                </div>
-                </div>
-            </div>
-       
+            }
+        </div>
     )
 }
 
