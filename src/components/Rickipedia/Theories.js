@@ -7,16 +7,18 @@ function Theories(props) {
 
     const [theory, setTheory] = useState('')
     const [redirect, setRedirect] = useState(false)
-    const [author, setAuthor] = useState('')
     const [comment, setComment] = useState('')
 
     const handleComment = (e) => {
         setComment(e.target.value)
-        setAuthor(props.user.userName)
     }
 
     const handleSubmitComment = (e) => {
-        const newComment = { theoryId: e.target.getAttribute('data-theory'), author, comment }
+        const newComment = { 
+            theoryId: e.target.getAttribute('data-theory'),
+            author: props.user.id,
+            comment 
+        }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/comments`, newComment)
         .then(response => {
             console.log(response)
@@ -27,11 +29,13 @@ function Theories(props) {
 
     const handleTheory = (e) => {
         setTheory(e.target.value)
-        setAuthor(props.user.userName)
     }
 
     const handleSubmit = () => {
-        const newTheory = { author, theory }
+        const newTheory = {
+            author: props.user.id,
+            theory 
+        }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/theories`, newTheory)
             .then(response => {
                 console.log(response)
