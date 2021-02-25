@@ -15,11 +15,8 @@ function Characters(props) {
                     <div className="container">
                         <div className="row">
                             <div className="column">
-                                <img className="characterPic" src={character.image}></img>
+                                <img className="characterPic" src={character.image} alt='RickAndMorty'></img>
                                 <p key={i}><Link to={`/character/${i}`}>{character.name}</Link></p>
-                                {/* <p>{character.name}</p> */}
-                                {/* <p>Species: {character.species} | Status: {character.status}</p> */}
-
                             </div>
                         </div>
                     </div>
