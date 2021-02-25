@@ -14,7 +14,7 @@ function Theories(props) {
     const [comment, setComment] = useState('')
     const [commenter, setCommenter] = useState('')
     const [theorist, setTheorist] = useState('')
-    // const [userPic, setUserPic] = useState(`${morty}`)
+
 
 
     const handleComment = (e) => {
@@ -60,11 +60,7 @@ function Theories(props) {
 
     if (redirect) return <Redirect to="/theories" />
 
-    // if (props.user.rickOrMorty == 'Rick') {
-    //    setUserPic(rick)
-    // } else {
-    //     setUserPic(morty)
-    // }
+
 
     return (
         <div className="theoriesPage">
@@ -90,7 +86,7 @@ function Theories(props) {
                                     
                                    
                                     <p>Posted by: <b>{theory.theorist} <p>a total {props.user.rickOrMorty} 
-                                    <img src={theory.thoerist==='Rick' ? morty : rick}/> 
+                                   
                                     {console.log('1111', theory.theorist)}
                                     
                                     
