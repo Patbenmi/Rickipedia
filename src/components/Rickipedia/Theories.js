@@ -8,9 +8,21 @@ function Theories(props) {
     const [theory, setTheory] = useState('')
     const [redirect, setRedirect] = useState(false)
     const [author, setAuthor] = useState('')
+    const [comment, setComment] = useState('')
 
     const handleComment = (e) => {
-        setTheory
+        setComment(e.target.value)
+        setAuthor(props.user.userName)
+    }
+
+    const handleSubmitComment = (e) => {
+        const newComment = { theoryId: e.target.getAttribute('data-theory'), author, comment }
+        axios.post(`${REACT_APP_SERVER_URL}/wiki/comments`, newComment)
+        .then(response => {
+            console.log(response)
+            setRedirect(true)
+        })
+        .catch(err => console.log(err))
     }
 
     const handleTheory = (e) => {
@@ -41,32 +53,32 @@ function Theories(props) {
                             </div>
                             <button type="submit">Submit</button>
                         </form>
-                        {props.theories.reverse().map(theory => (
+                        {props.theories.map(theory => (
                             <div>
                                 <p>Posited by: {theory.author}</p>
                                 <h2>{theory.body}</h2>
                                 <ul>
-                                    {theory.comments.reverse().map(comment => (
+                                    {theory.comments.map(comment => (
                                     <li>
                                         <p>{comment.author}</p>
                                         <p>{comment.body}</p>
                                     </li>
                                     ))}
                                 </ul>
-                                <form onSubmit={handleComment}>
-                                    <textarea type="text" defaultValue="Leave a comment" />
+                                <form data-theory={theory._id} onSubmit={handleSubmitComment}>
+                                    <textarea name="comment" type="text" defaultValue="Leave a comment" onChange={handleComment}/>
                                     <button type="submit">Submit</button>
                                 </form>
                             </div>
                         ))}
                     </div>
                     : <div>
-                        {props.theories.reverse().map(theory => (
+                        {props.theories.map(theory => (
                             <div>
                                 <p>Posited by: {theory.author}</p>
                                 <h2>{theory.body}</h2>
                                 <ul>
-                                    {theory.comments.reverse().map(comment => (
+                                    {theory.comments.map(comment => (
                                     <li>
                                         <p>{comment.author}</p>
                                         <p>{comment.body}</p>
