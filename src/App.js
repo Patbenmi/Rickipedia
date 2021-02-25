@@ -18,6 +18,7 @@ import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
 import Episode from './components/Rickipedia/Episode'
 import UpdateProfile from './components/updateProfile'
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -37,7 +38,7 @@ function App() {
   const [theories, setTheories] = useState([])
 
 useEffect(() => {
-  fetch('http://localhost:8000/wiki/theories')
+  fetch(`${REACT_APP_SERVER_URL}/wiki/theories`)
   .then(res => res.json())
   .then(theoryData => {
     setTheories(theoryData)
@@ -45,7 +46,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  fetch('http://localhost:8000/wiki/characters')
+  fetch(`${REACT_APP_SERVER_URL}/wiki/characters`)
     .then(res => res.json())
     .then(characterData => {
       setCharacters(characterData)
@@ -53,7 +54,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  fetch('http://localhost:8000/wiki/episodes')
+  fetch(`${REACT_APP_SERVER_URL}/wiki/episodes`)
     .then(res => res.json())
     .then(episodeData => {
       setEpisodes(episodeData)
@@ -61,7 +62,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  fetch('http://localhost:8000/wiki/locations')
+  fetch(`${REACT_APP_SERVER_URL}/wiki/locations`)
     .then(res => res.json())
     .then(locationData => {
       setLocations(locationData)
