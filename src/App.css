@@ -138,7 +138,7 @@ Locations {
 }
 
 .dropdown {
-  background-color:linear-gradient(90deg, rgba(0,69,4,0.7791491596638656) 0%, rgba(0,98,6,0.7595413165266106) 42%);
+  background-color:black;
   margin: 80px;
   text-align: left;
 }
@@ -146,7 +146,7 @@ Locations {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: linear-gradient(90deg, rgba(0,69,4,0.7791491596638656) 0%, rgba(0,98,6,0.7595413165266106) 42%);
+  background-color: black;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,1);
   z-index: 1;
@@ -182,6 +182,11 @@ Locations {
 	text-shadow:0px 1px 0px #0ba700;
   text-align: left;
   
+}
+
+.theoryReverse {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 #navbarsExample07 {
