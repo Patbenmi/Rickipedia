@@ -4,6 +4,12 @@ import '../../App.css';
 
 function Locations(props) {
     return (
+        <div className="locationsPage">
+        <div className="locationsTitle">
+            <h1 className="ab1">Locations</h1>
+            <br>
+            </br>
+        </div>
         <div class="locationBody" >
             {props.locations.map(location => (
                 <div class="dropdown">
@@ -19,6 +25,7 @@ function Locations(props) {
                     </ul>
                 </div>
             ))}
+        </div>
         </div>
     )
 }

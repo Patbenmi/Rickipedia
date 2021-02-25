@@ -8,7 +8,7 @@ function Episodes(props) {
     return (
         <div className="episodesPage">
             <div className="episodesTitle">
-                <h1>Episodes</h1>
+                <h1 className="ab1">Episodes</h1>
                 <br>
                 </br>
             </div>
