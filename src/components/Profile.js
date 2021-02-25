@@ -16,6 +16,7 @@ const Profile = (props) => {
         .then(response => {
             console.log(response)
             setRedirect(true)
+            props.setIsAuthenticated(false)
         })
     }
     const userData = props.user ? 

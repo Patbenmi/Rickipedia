@@ -41,7 +41,7 @@ function Theories(props) {
                 </form>
                 {props.theories.map((theory, index) => (
                     <div key={index}>
-                        <Theory theory={theory} />
+                        <Theory theory={theory} isAuth={props.isAuth}/>
                     </div>
                 ))}
             </div>
