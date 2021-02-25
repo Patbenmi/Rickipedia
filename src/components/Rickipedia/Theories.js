@@ -6,6 +6,7 @@ import '../../../src/App.css'
 const axios = require('axios')
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
+
 function Theories(props) {
 
     const [theory, setTheory] = useState('')
@@ -79,7 +80,9 @@ function Theories(props) {
                             <div class="theoryReverse">
                             {props.theories.map(theory => (
                                 <div className="theoryComments">
-                                    <p>Posited by: <b>{theory.theorist}</b></p>
+                                    <p>Posted by: <b>{theory.theorist}  </b> </p> 
+                                    {/* <p>a {props.user.rickOrMorty} </p> */}
+                                    
                                     <h2 className="ab2">{theory.body}</h2>
                                     <ul>
                                         <p>
