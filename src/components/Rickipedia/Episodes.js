@@ -9,10 +9,9 @@ function Episodes(props) {
         <div className="episodesPage">
             <div className="episodesTitle">
                 <h1 className="ab1">Episodes</h1>
-                <br>
-                </br>
+                <img className="welcomeImage" src="https://media.giphy.com/media/l0MYBQSaLvKxe0G6A/giphy.gif"></img>
             </div>
-            <div>
+            <div className="episodeList">
                 {props.episodes.map((episode, index) => (
                     <>
                         <br></br>

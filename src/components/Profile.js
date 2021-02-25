@@ -28,7 +28,7 @@ const Profile = (props) => {
         <p><strong>ID:</strong> {props.user.id}</p> 
         {console.log('11111', props.user)}
         <form>
-            <button type="submit" onClick={handleDelete}className="btn btn-primary float-right">Delete</button>
+            <button type="submit" onClick={handleDelete} className="btn btn-primary float-right" id="deleteBtn">Delete</button>
         </form>
 
     </div>) : <h4>Loading...</h4>

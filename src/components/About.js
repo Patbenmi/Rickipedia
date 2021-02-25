@@ -15,8 +15,7 @@ const About = () => {
             <hr></hr>
             <div className="aboutTeam">
                 <h2 className="ab1">We’re the only friends we’ve got, Morty!</h2>
-                <br>
-                </br>
+                <img className="welcomeImage" src="https://media.giphy.com/media/jrijP60lUxjUjpa7YF/giphy.gif"></img>
                 <p>The amazing humans that built this.</p>
             </div>
 

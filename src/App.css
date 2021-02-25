@@ -29,7 +29,7 @@ body {
   /* text-align: center; */
 }
 
-.welcomeHeader, .episodesPage {
+.welcomeHeader, .episodesPage, .charPage {
   text-align: center;
 }
 
@@ -43,7 +43,11 @@ body {
 
 .aboutPage, .aboutIntro, .aboutTeam {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.aboutTeam {
+  margin-top: 30px;
 }
 
 .ab1 {
@@ -68,6 +72,16 @@ body {
   margin-bottom: 10px;
 }
 
+.charPic {
+  border: solid 5px aqua;
+  width: 10vw;
+  margin-bottom: 20px;
+}
+
+.charPage {
+  text-align: center;
+}
+
 .characterName {
   margin-bottom: 50px;
   text-align: center;
@@ -90,7 +104,9 @@ form, .py-2 {
   font-family: 'GetSchwifty';
   border: solid 2px aqua;
   border-radius: 25%;
-  display: inline-block;}
+  display: inline-block;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'GetSchwifty';
@@ -101,7 +117,8 @@ hr {
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
   width: 25vw;
 }
 
@@ -120,10 +137,7 @@ Locations {
   background-position: center;
 }
 
-
-
 .dropdown {
-
   background-color:linear-gradient(90deg, rgba(0,69,4,0.7791491596638656) 0%, rgba(0,98,6,0.7595413165266106) 42%);
   margin: 80px;
   text-align: left;
@@ -138,7 +152,6 @@ Locations {
   z-index: 1;
   text-align: left;
 }
-
 
 .dropdown-content li:hover 
 {background-color:linear-gradient(90deg, rgba(0,0,0,0.7791491596638656) 0%, rgba(0,0,0,0.7595413165266106) 42%);
@@ -173,4 +186,36 @@ Locations {
 
 #navbarsExample07 {
   font-size: 12px;
+}
+
+.theoriesInfo {
+  text-align: start;
+}
+
+.theoriesPage {
+  text-align: center;
+}
+
+.theoryText {
+  width: 500px;
+  /* height: 100px; */
+  text-align: center;
+}
+
+.commentText {
+  width: 300px;
+  text-align: center;
+}
+
+.theoryBtn, #deleteBtn {
+  width: 150px;
+  height: 50px;
+  background-color: aqua;
+  color: black;
+  margin: 20px 25px 20px 25px;
+  font-size: 18px;
+  font-family: 'GetSchwifty';
+  border: solid 5px lime;
+  border-radius: 35%;
+  display: inline-block;
 }
