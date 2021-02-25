@@ -1,7 +1,14 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import Portal from '../../src/Audio/portal.mp3'
 
 const Navbar = (props) => {
+
+    function portalSound() {
+        const audio = new Audio(Portal)
+        audio.play()
+    }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-aqua">
             <div className="container">
@@ -16,7 +23,7 @@ const Navbar = (props) => {
                                 <NavLink className="nav-link" exact to="/">HOME </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/characters"> CHARACTERS </NavLink>
+                                <NavLink onClick={portalSound} className="nav-link" to="/characters"> CHARACTERS </NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/episodes"> EPISODES </NavLink>
