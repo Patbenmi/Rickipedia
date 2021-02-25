@@ -29,7 +29,7 @@ body {
   /* text-align: center; */
 }
 
-.welcomeHeader {
+.welcomeHeader, .episodesPage {
   text-align: center;
 }
 
@@ -48,6 +48,7 @@ body {
 
 .ab1 {
   color: aqua;
+  text-align: center;
 }
 
 .ab2 {
@@ -64,6 +65,12 @@ body {
 .characterPic {
   border: solid 2px white;
   width: 10vw;
+  margin-bottom: 10px;
+}
+
+.characterName {
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .charactersTitle, .episodesTitle, .locationsTitle {
@@ -113,17 +120,10 @@ Locations {
   background-position: center;
 }
 
-/* .dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-} */
+
 
 .dropdown {
-  /* position: relative;
-  display: inline-block; */
+
   background-color:linear-gradient(90deg, rgba(0,69,4,0.7791491596638656) 0%, rgba(0,98,6,0.7595413165266106) 42%);
   margin: 80px;
   text-align: left;
@@ -139,12 +139,6 @@ Locations {
   text-align: left;
 }
 
-/* .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-} */
 
 .dropdown-content li:hover 
 {background-color:linear-gradient(90deg, rgba(0,0,0,0.7791491596638656) 0%, rgba(0,0,0,0.7595413165266106) 42%);

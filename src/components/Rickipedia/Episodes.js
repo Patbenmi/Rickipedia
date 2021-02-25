@@ -15,8 +15,10 @@ function Episodes(props) {
             <div>
                 {props.episodes.map((episode, index) => (
                     <>
-                        <li key={index}><Link to={`/episode/${index}`}>{episode.name} - {episode.episode}</Link></li>
-                        <hr></hr>
+                        <br></br>
+                        <h2 key={index}><Link to={`/episode/${index}`}>{episode.name} - {episode.episode}</Link></h2>
+                        <br></br>
+                        {/* <hr></hr> */}
                     </>
                 ))}
             </div>

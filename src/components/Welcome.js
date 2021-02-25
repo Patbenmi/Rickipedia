@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const Welcome = () => {
     return (
@@ -10,10 +11,10 @@ const Welcome = () => {
                 <img className="welcomeImage" src="https://wallpaperaccess.com/full/637645.jpg"></img>
             </div>
             <div className="sectionOne">
-                <button className="charBtn" type="button">Characters</button>
-                <button className="epBtn" type="button">Episodes</button>
-                <button className="loBtn" type="button">Locations</button>
-                <button className="aboutBtn" type="button">About</button>
+                <button className="charBtn" type="button"><Link className="homeBtn" to="/characters">{`Characters`}</Link></button>
+                <button className="charBtn" type="button"><Link className="homeBtn" to="/episodes">{`Episodes`}</Link></button>
+                <button className="charBtn" type="button"><Link className="homeBtn" to="/locations">{`Locations`}</Link></button>
+                <button className="charBtn" type="button"><Link className="homeBtn" to="/about">{`About`}</Link></button>
             </div>
         </div>
     );

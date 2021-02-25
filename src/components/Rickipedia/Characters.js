@@ -16,7 +16,7 @@ function Characters(props) {
                         <div className="row">
                             <div className="column">
                                 <img className="characterPic" src={character.image} alt='RickAndMorty'></img>
-                                <p key={i}><Link to={`/character/${i}`}>{character.name}</Link></p>
+                                <h6 className="characterName" key={i}><Link to={`/character/${i}`}>{character.name}</Link></h6>
                             </div>
                         </div>
                     </div>

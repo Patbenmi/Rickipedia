@@ -16,10 +16,11 @@ const Profile = (props) => {
         .then(response => {
             console.log(response)
             setRedirect(true)
+            props.setIsAuthenticated(false)
         })
     }
     const userData = props.user ? 
-    (<div>
+    (<div className="profilePage">
         <h1 className="ab1">Profile</h1>
         <p><strong>User Name:</strong> {props.user.userName}</p>
         <p><strong>You are a:</strong> {props.user.rickOrMorty}</p>
