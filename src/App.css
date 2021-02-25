@@ -102,7 +102,7 @@ Locations {
   
   text-align: left;
 }
-add .
+
 
 .dropdown-content li:hover 
 {background-color:linear-gradient(90deg, rgba(0,0,0,0.7791491596638656) 0%, rgba(0,0,0,0.7595413165266106) 42%);
@@ -135,6 +135,15 @@ add .
   
 }
 
+/* .theory {
+  display: flex;
+  flex-direction: column-reverse;
+} */
+.theories {
+  display: flex;
+  flex-direction: column-reverse;
+ 
+}
 
 
 

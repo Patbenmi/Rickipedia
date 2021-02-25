@@ -30,7 +30,7 @@ function Theories(props) {
     if (redirect) return <Redirect to="/theories" />
 
     return (
-        <div>
+        <div >
             <div>
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -39,13 +39,16 @@ function Theories(props) {
                     </div>
                     <button type="submit">Submit</button>
                 </form>
+               <div class="theories">
                 {props.theories.map((theory, index) => (
                     <div key={index}>
                         <Theory theory={theory} />
                     </div>
                 ))}
+                </div>
+                </div>
             </div>
-        </div>
+       
     )
 }
 

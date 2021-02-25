@@ -1,5 +1,6 @@
 import React from 'react'
 import Comment from './Comment'
+import '../../App.css';
 
 export default function Theory(props) {
 
@@ -15,11 +16,14 @@ export default function Theory(props) {
         <textarea type="text" defaultValue="Leave a comment" />
         <button type="submit">Submit</button>
       </form>
+     <div class='theory'>
       {props.theory.comments.map((comment, index) => (
         <li key={index}>
           <Comment comment={comment} />
         </li>
       ))}
-    </div>
+      </div>
+      </div>
+    
   )
 }
