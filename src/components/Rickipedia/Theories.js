@@ -3,9 +3,8 @@ import { Redirect } from 'react-router-dom'
 import '../../../src/App.css'
 const axios = require('axios')
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
-const morty = "https://imgur.com/EU4dZFE"
-const rick = "https://imgur.com/OyfFeFG"
-let userPic
+const morty = "https://i.imgur.com/EU4dZFEt.png"
+const rick = 'https://i.imgur.com/OyfFeFGt.png'
 
 
 function Theories(props) {
@@ -15,7 +14,7 @@ function Theories(props) {
     const [comment, setComment] = useState('')
     const [commenter, setCommenter] = useState('')
     const [theorist, setTheorist] = useState('')
-    const [userPic, setUserPic] = useState('')
+    // const [userPic, setUserPic] = useState(`${morty}`)
 
 
     const handleComment = (e) => {
@@ -61,11 +60,11 @@ function Theories(props) {
 
     if (redirect) return <Redirect to="/theories" />
 
-    if (props.user.rickOrMorty === 'Rick') {
-        setUserPic = rick
-    } else {
-        setUserPic = morty 
-    }
+    // if (props.user.rickOrMorty == 'Rick') {
+    //    setUserPic(rick)
+    // } else {
+    //     setUserPic(morty)
+    // }
 
     return (
         <div className="theoriesPage">
@@ -91,7 +90,10 @@ function Theories(props) {
                                     
                                    
                                     <p>Posted by: <b>{theory.theorist} <p>a total {props.user.rickOrMorty} 
-                                    <img  src="{userPic}" alt='RickAndMorty'></img>
+                                    <img src={theory.thoerist==='Rick' ? morty : rick}/> 
+                                    {console.log('1111', theory.theorist)}
+                                    
+                                    
                                     </p> </b> </p> 
                                     
                                     <h2 className="ab2">{theory.body}</h2>
