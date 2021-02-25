@@ -108,7 +108,7 @@ return (
             path="/login" 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
           <Route path="/about" component={ About } />
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser} setIsAuthenticated={setIsAuthenticated}/>
           <PrivateRoute path="/update" component={ UpdateProfile } user={currentUser} setCurrentUser={setCurrentUser} />
           <Route exact path="/" component={ Welcome } />
           <Route path="/home" component={ Home } user={currentUser}/>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import Comment from './Comment'
+import Theory from './Theory'
 const axios = require('axios')
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -8,6 +10,7 @@ function Theories(props) {
     const [theory, setTheory] = useState('')
     const [redirect, setRedirect] = useState(false)
     const [comment, setComment] = useState('')
+
 
     const handleComment = (e) => {
         setComment(e.target.value)
@@ -27,7 +30,9 @@ function Theories(props) {
         .catch(err => console.log(err))
     }
 
+
     const handleTheory = (e) => {
+        e.preventDefault()
         setTheory(e.target.value)
     }
 
@@ -43,6 +48,7 @@ function Theories(props) {
             })
             .catch(err => console.log(err))
     }
+
     if (redirect) return <Redirect to="/theories" />
 
     return (
@@ -92,8 +98,11 @@ function Theories(props) {
                             </div>
                         ))}
                     </div>
-            }
-        </div>
+                ))}
+                </div>
+                </div>
+            </div>
+       
     )
 }
 
