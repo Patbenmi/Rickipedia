@@ -5,21 +5,22 @@ import Episode from './Episode'
 
 function Episodes(props) {
     console.log(props)
-    return(
+    return (
         <div className="episodesPage">
             <div className="episodesTitle">
-                <h1>Episodes</h1>
-                <br>
-                </br>
+                <h1 className="ab1">Episodes</h1>
+                <img className="welcomeImage" src="https://media.giphy.com/media/l0MYBQSaLvKxe0G6A/giphy.gif"></img>
             </div>
-        <div>
-            {props.episodes.map((episode, index) => (
-                <>
-                <li key={index}><Link to={`/episode/${index}`}>{episode.name} - {episode.episode}</Link></li>
-                <hr></hr>
-                </>
-            ))}
-        </div>
+            <div className="episodeList">
+                {props.episodes.map((episode, index) => (
+                    <>
+                        <br></br>
+                        <h2 key={index}><Link to={`/episode/${index}`}>{episode.name} - {episode.episode}</Link></h2>
+                        <br></br>
+                        {/* <hr></hr> */}
+                    </>
+                ))}
+            </div>
         </div>
     )
 }

@@ -3,9 +3,9 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = (props) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-aqua">
             <div className="container">
-                <Link className="navbar-brand" to="/">Rickipedia and Mortiverse</Link>
+                <Link className="navbar-brand" to="/">{`Rickipedia & Mortiverse`}</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="#navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -13,13 +13,7 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/theories">THEORIES</NavLink>
-                            </li>
-                            <li className="nav-item">
                                 <NavLink className="nav-link" exact to="/">HOME </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/about"> ABOUT </NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/characters"> CHARACTERS </NavLink>
@@ -29,6 +23,12 @@ const Navbar = (props) => {
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/locations"> LOCATIONS </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/theories">THEORIES</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/about"> ABOUT </NavLink>
                             </li>
                         </ul>
                     {

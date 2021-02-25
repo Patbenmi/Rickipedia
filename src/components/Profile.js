@@ -20,15 +20,15 @@ const Profile = (props) => {
         })
     }
     const userData = props.user ? 
-    (<div>
-        <h1>Profile</h1>
+    (<div className="profilePage">
+        <h1 className="ab1">Profile</h1>
         <p><strong>User Name:</strong> {props.user.userName}</p>
         <p><strong>You are a:</strong> {props.user.rickOrMorty}</p>
         <p><strong>Dimension:</strong> {props.user.dimension}</p> 
         <p><strong>ID:</strong> {props.user.id}</p> 
         {console.log('11111', props.user)}
         <form>
-            <button type="submit" onClick={handleDelete}className="btn btn-primary float-right">Delete</button>
+            <button type="submit" onClick={handleDelete} className="btn btn-primary float-right" id="deleteBtn">Delete</button>
         </form>
 
     </div>) : <h4>Loading...</h4>

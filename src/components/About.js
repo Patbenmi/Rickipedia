@@ -4,8 +4,8 @@ const About = () => {
     return (
         <div className="aboutPage">
             <div className="aboutIntro">
-                <h2>Robot: What is my purpose?</h2>
-                <h2>Rick: You pass butter</h2>
+                <h2 className="ab1">Robot: What is my purpose?</h2>
+                <h2 className="ab2">Rick: You pass butter</h2>
                 <br>
                 </br>
                 <p>
@@ -14,9 +14,8 @@ const About = () => {
             </div>
             <hr></hr>
             <div className="aboutTeam">
-                <h2>We’re the only friends we’ve got, Morty!</h2>
-                <br>
-                </br>
+                <h2 className="ab1">We’re the only friends we’ve got, Morty!</h2>
+                <img className="welcomeImage" src="https://media.giphy.com/media/jrijP60lUxjUjpa7YF/giphy.gif"></img>
                 <p>The amazing humans that built this.</p>
             </div>
 

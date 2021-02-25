@@ -6,7 +6,7 @@ function Characters(props) {
     return (
         <div className="charactersPage">
             <div className="charactersTitle">
-                <h1>Meet the Characters</h1>
+                <h1 className="ab1">Meet the Characters</h1>
                 <br>
                 </br>
             </div>
@@ -16,7 +16,7 @@ function Characters(props) {
                         <div className="row">
                             <div className="column">
                                 <img className="characterPic" src={character.image} alt='RickAndMorty'></img>
-                                <p key={i}><Link to={`/character/${i}`}>{character.name}</Link></p>
+                                <h6 className="characterName" key={i}><Link to={`/character/${i}`}>{character.name}</Link></h6>
                             </div>
                         </div>
                     </div>
