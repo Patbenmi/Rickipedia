@@ -130,11 +130,9 @@ Locations {
   background-color: black;
 }
 
-.locationBody {
-  background: url("./EveryD.jpg") no-repeat fixed ;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.locationPic {
+  width: 75%;
+  height: auto;
 }
 
 .dropdown {

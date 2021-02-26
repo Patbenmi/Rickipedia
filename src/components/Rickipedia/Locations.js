@@ -1,9 +1,12 @@
 import React from 'react';
 import '../../App.css';
+const pinkPortal = "https://i.imgur.com/tNx7kC7.gif"
+const rick = 'https://i.imgur.com/Z7GorP4l.gif'
 
 function Locations(props) {
     return (
         <div className="locationsPage">
+            <img class="locationPic" src={pinkPortal}/> 
             <div className="locationsTitle">
                 <h1 className="ab1">Locations</h1>
             </div>

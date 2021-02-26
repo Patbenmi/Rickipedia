@@ -25,8 +25,8 @@ const Profile = (props) => {
         <h1 className="ab1">Profile</h1>
         <p><strong>User Name:</strong> {props.user.userName}</p>
         <p><strong>You are a:</strong> {props.user.rickOrMorty}</p>
-        <img src={props.user.rickOrMorty==='Rick' ? rick : morty}/> 
         <p><strong>Dimension:</strong> {props.user.dimension}</p> 
+        <img src={props.user.rickOrMorty==='Rick' ? rick : morty}/> 
         <form>
             <button type="submit" onClick={handleDelete} className="btn btn-primary float-right" id="deleteBtn">Delete</button>
         </form>
