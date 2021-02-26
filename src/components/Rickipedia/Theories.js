@@ -91,8 +91,8 @@ function Theories(props) {
                                             <textarea className="commentText" name="comment" type="text" defaultValue="Comment on this theory" onChange={handleComment} />
                                             <br></br>
                                             <button className="theoryBtn" type="submit">Add Comment</button>
-                                            <hr></hr>
                                         </form>
+                                        <hr></hr>
                                     </div>
                                 ))}
                             </div>
