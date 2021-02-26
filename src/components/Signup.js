@@ -11,7 +11,6 @@ const Signup = () => {
     let [password, setPassword] = useState('');
     let [confirmPassword, setConfirmPassword] = useState('');
     let [redirect, setRedirect] = useState(false);
-    console.log('111', rickOrMorty)
 
     const handleUserName = (e) => {
         setUserName(e.target.value);
@@ -42,7 +41,6 @@ const Signup = () => {
 
             axios.post(`${REACT_APP_SERVER_URL}/api/signup`, newUser)
             .then(response => {
-                console.log(response);
                 setRedirect(true);
             })
             .catch(error => console.log(error));
@@ -89,7 +87,6 @@ const Signup = () => {
             </div>
         </div>
     );
-
 }
 
 export default Signup;

@@ -9,7 +9,6 @@ export default function UpdateDeleteProfile(props) {
     let [rickOrMorty, setRickOrMorty] = useState('')
     let [dimension, setDimension] = useState('')
     let [redirect, setRedirect] = useState(false)
-    console.log('111', rickOrMorty)
 
     const handleUserName = (e) => {
         setUserName(e.target.value);
@@ -30,7 +29,6 @@ export default function UpdateDeleteProfile(props) {
         const updatedUser = { id: props.user.id, userName, email, dimension, rickOrMorty }
         axios.put(`${REACT_APP_SERVER_URL}/api/update`, updatedUser)
             .then(response => {
-                console.log(response);
                 setRedirect(true)
                 props.setCurrentUser(updatedUser)
             })

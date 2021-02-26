@@ -82,7 +82,6 @@ useEffect(() => {
 }, []);
 
 const nowCurrentUser = (userData) => {
-  console.log('nowCurrentUser is working...');
   setCurrentUser(userData);
   setIsAuthenticated(true);
 };
@@ -94,9 +93,6 @@ const handleLogout = () => {
     setIsAuthenticated(false);
   }
 }
-
-console.log('Current User', currentUser);
-console.log('Authenicated', isAuthenticated);
 
 return (
   <div>
@@ -126,8 +122,5 @@ return (
     <Footer />
   </div>
 )}
-
-
-console.log("Hi guys testing")
 
 export default App
