@@ -46,7 +46,7 @@ body {
   margin-bottom: 30px;
 }
 
-.aboutTeam {
+.aboutTeam, .locationPic, .profilePic {
   margin-top: 30px;
 }
 
@@ -87,7 +87,7 @@ body {
   text-align: center;
 }
 
-.charactersTitle, .episodesTitle, .locationsTitle {
+.charactersTitle, .episodesTitle, .locationsTitle, .epPage, .profilePage {
   text-align: center;
 }
 
