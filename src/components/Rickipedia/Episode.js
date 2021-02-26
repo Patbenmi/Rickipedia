@@ -5,13 +5,13 @@ function Episode(props) {
   console.log(props)
   return(
     
-    <div>
+    <div className="epPage">
       <a href={props.episodes[props.match.params.id].link} target='_blank' rel="noopener noreferrer"><h1>{props.episodes[props.match.params.id].name}</h1></a>
       <p>{props.episodes[props.match.params.id].episode}</p>
       <p>Aired on: <b>{props.episodes[props.match.params.id].date}</b></p>
       <p>{props.episodes[props.match.params.id].synopsis}</p>
       <>
-      <Link classname="backtoepisodes" to='/episodes'  >Back To Episodes</Link>
+      <Link classname="backtoepisodes" to='/episodes'>Back To Episodes</Link>
       </>
     </div>
   
