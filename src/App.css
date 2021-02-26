@@ -128,7 +128,23 @@ ul {
 
 Locations {
   background-color: black;
+  text-align: start;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
 }
+
+/* .locationBody {
+  display: flex;
+  text-align: start;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column
+} */
 
 .locationPic {
   width: 75%;
@@ -152,7 +168,7 @@ Locations {
 }
 
 .dropdown-content li:hover 
-{background-color:linear-gradient(90deg, rgba(0,0,0,0.7791491596638656) 0%, rgba(0,0,0,0.7595413165266106) 42%);
+{background-color:linear-gradient(90deg, black);
   text-align: left;
 }
 
@@ -168,8 +184,9 @@ Locations {
 }
 
 .dropbtn {
-  background:linear-gradient(90deg, rgba(0, 0, 0, 0.779) 0%, rgba(0,98,6,0.7595413165266106) 42%);
-	background-color:linear-gradient(90deg, rgba(0,0,0,0.7791491596638656) 0%, rgba(0,0,0,0.7595413165266106) 42%);
+  color: black;
+  background:lime;
+	background-color: black;
 	border-radius:10px;
 	display:inline-block;
 	cursor:pointer;
