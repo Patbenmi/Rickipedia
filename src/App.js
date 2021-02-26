@@ -10,7 +10,6 @@ import Profile from './components/Profile';
 import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
-import Home from './components/Rickipedia/Home'
 import Characters from './components/Rickipedia/Characters'
 import Character from './components/Rickipedia/Character'
 import Locations from './components/Rickipedia/Locations'
@@ -18,6 +17,7 @@ import Theories from './components/Rickipedia/Theories'
 import Episodes from './components/Rickipedia/Episodes'
 import Episode from './components/Rickipedia/Episode'
 import UpdateProfile from './components/updateProfile'
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -37,7 +37,7 @@ function App() {
   const [theories, setTheories] = useState([])
 
 useEffect(() => {
-  fetch('http://localhost:8000/wiki/theories')
+  fetch(`${REACT_APP_SERVER_URL}/wiki/theories`)
   .then(res => res.json())
   .then(theoryData => {
     setTheories(theoryData)
@@ -45,7 +45,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  fetch('http://localhost:8000/wiki/characters')
+  fetch(`${REACT_APP_SERVER_URL}/wiki/characters`)
     .then(res => res.json())
     .then(characterData => {
       setCharacters(characterData)
@@ -53,7 +53,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  fetch('http://localhost:8000/wiki/episodes')
+  fetch(`${REACT_APP_SERVER_URL}/wiki/episodes`)
     .then(res => res.json())
     .then(episodeData => {
       setEpisodes(episodeData)
@@ -61,7 +61,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  fetch('http://localhost:8000/wiki/locations')
+  fetch(`${REACT_APP_SERVER_URL}/wiki/locations`)
     .then(res => res.json())
     .then(locationData => {
       setLocations(locationData)
@@ -81,7 +81,6 @@ useEffect(() => {
 }, []);
 
 const nowCurrentUser = (userData) => {
-  console.log('nowCurrentUser is working...');
   setCurrentUser(userData);
   setIsAuthenticated(true);
 };
@@ -93,9 +92,6 @@ const handleLogout = () => {
     setIsAuthenticated(false);
   }
 }
-
-console.log('Current User', currentUser);
-console.log('Authenicated', isAuthenticated);
 
 return (
   <div>
@@ -111,7 +107,6 @@ return (
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} setIsAuthenticated={setIsAuthenticated} handleLogout={handleLogout}/>
           <PrivateRoute path="/update" component={ UpdateProfile } user={currentUser} setCurrentUser={setCurrentUser} />
           <Route exact path="/" component={ Welcome } />
-          <Route path="/home" component={ Home } user={currentUser}/>
           <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
           <Route path="/character/:id" render={(props)=>  <Character {...props} characters={characters}/>}/>
           <Route path="/locations" render={()=>  <Locations locations={locations}/>}/>
@@ -125,8 +120,5 @@ return (
     <Footer />
   </div>
 )}
-
-
-console.log("Hi guys testing")
 
 export default App

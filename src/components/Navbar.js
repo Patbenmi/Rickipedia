@@ -1,11 +1,29 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import Pickle from '../../src/Audio/pickle_rick.mp3'
 import Portal from '../../src/Audio/portal.mp3'
+import Meeseeks from '../../src/Audio/meeseeks.mp3'
+import Deep from '../../src/Audio/deep.mp3'
 
 const Navbar = (props) => {
 
-    function portalSound() {
+    function pickleRick() {
+        const audio = new Audio(Pickle)
+        audio.play()
+    }
+
+    function portal() {
         const audio = new Audio(Portal)
+        audio.play()
+    }
+
+    function meeseeks() {
+        const audio = new Audio(Meeseeks)
+        audio.play()
+    }
+
+    function deep() {
+        const audio = new Audio(Deep)
         audio.play()
     }
 
@@ -23,16 +41,16 @@ const Navbar = (props) => {
                                 <NavLink className="nav-link" exact to="/">HOME </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink onClick={portalSound} className="nav-link" to="/characters"> CHARACTERS </NavLink>
+                                <NavLink onClick={pickleRick} className="nav-link" to="/characters"> CHARACTERS </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/episodes"> EPISODES </NavLink>
+                                <NavLink onClick={meeseeks} className="nav-link" to="/episodes"> EPISODES </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/locations"> LOCATIONS </NavLink>
+                                <NavLink onClick={portal} className="nav-link" to="/locations"> LOCATIONS </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/theories">THEORIES</NavLink>
+                                <NavLink onClick={deep} className="nav-link" to="/theories">THEORIES</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/about"> ABOUT </NavLink>

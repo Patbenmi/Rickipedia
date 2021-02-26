@@ -46,7 +46,7 @@ body {
   margin-bottom: 30px;
 }
 
-.aboutTeam {
+.aboutTeam, .locationPic, .profilePic {
   margin-top: 30px;
 }
 
@@ -87,7 +87,7 @@ body {
   text-align: center;
 }
 
-.charactersTitle, .episodesTitle, .locationsTitle, .epPage {
+.charactersTitle, .episodesTitle, .locationsTitle, .epPage, .profilePage {
   text-align: center;
 }
 
@@ -130,11 +130,9 @@ Locations {
   background-color: black;
 }
 
-.locationBody {
-  background: url("./EveryD.jpg") no-repeat fixed ;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.locationPic {
+  width: 75%;
+  height: auto;
 }
 
 .dropdown {
