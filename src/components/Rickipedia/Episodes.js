@@ -3,7 +3,6 @@ import '../../../src/App.css'
 import { Link } from 'react-router-dom'
 
 function Episodes(props) {
-    console.log(props)
     return (
         <div className="episodesPage">
             <div className="episodesTitle">

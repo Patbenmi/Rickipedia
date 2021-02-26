@@ -8,8 +8,6 @@ const rick = 'https://i.imgur.com/Z7GorP4l.gif'
 
 const Profile = (props) => {
     let [redirect, setRedirect] = useState(false)
-    console.log(props);
-
     
     const handleDelete = (e) => {
         e.preventDefault()
@@ -23,10 +21,10 @@ const Profile = (props) => {
     const userData = props.user ? 
     (<div className="profilePage">
         <h1 className="ab1">Profile</h1>
+        <img className="profilePic" src={props.user.rickOrMorty==='Rick' ? rick : morty}/> 
         <p><strong>User Name:</strong> {props.user.userName}</p>
         <p><strong>You are a:</strong> {props.user.rickOrMorty}</p>
         <p><strong>Dimension:</strong> {props.user.dimension}</p> 
-        <img src={props.user.rickOrMorty==='Rick' ? rick : morty}/> 
         <form>
             <button type="submit" onClick={handleDelete} className="btn btn-primary float-right" id="deleteBtn">Delete</button>
         </form>

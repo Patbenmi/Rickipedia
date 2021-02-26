@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Character(props) {
-  console.log(props)
   return(
     <div className="charPage">
         <img className="charPic" src={props.characters[props.match.params.id].image} alt='RickAndMorty'></img>

@@ -28,7 +28,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
-  // set state values
   let [currentUser, setCurrentUser] = useState("");
   let [isAuthenticated, setIsAuthenticated] = useState(true);
   const [characters, setCharacters] = useState([])
@@ -106,7 +105,7 @@ return (
           <Route path="/about" component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} setIsAuthenticated={setIsAuthenticated} handleLogout={handleLogout}/>
           <PrivateRoute path="/update" component={ UpdateProfile } user={currentUser} setCurrentUser={setCurrentUser} />
-          <Route exact path="/" component={ Welcome } />         
+          <Route exact path="/" component={ Welcome } />
           <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
           <Route path="/character/:id" render={(props)=>  <Character {...props} characters={characters}/>}/>
           <Route path="/locations" render={()=>  <Locations locations={locations}/>}/>
