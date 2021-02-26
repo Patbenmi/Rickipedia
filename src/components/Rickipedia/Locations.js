@@ -3,7 +3,6 @@ import '../../App.css';
 const pinkPortal = "https://i.imgur.com/tNx7kC7.gif"
 const rick = 'https://i.imgur.com/Z7GorP4l.gif'
 
-
 function Locations(props) {
     return (
         <div className="locationsPage">
@@ -19,7 +18,6 @@ function Locations(props) {
                             <div class="dropdown-content">
                                 <li> <h4>Dimension: {location.dimension}</h4></li>
                                 <li>  <h4>Type: {location.type}</h4></li>
-
                             </div>
                         </ul>
                     </div>

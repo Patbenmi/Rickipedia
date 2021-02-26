@@ -6,7 +6,6 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 const morty = "https://i.imgur.com/EU4dZFEt.png"
 const rick = 'https://i.imgur.com/OyfFeFGt.png'
 
-
 function Theories(props) {
 
     const [theory, setTheory] = useState('')
@@ -14,8 +13,6 @@ function Theories(props) {
     const [comment, setComment] = useState('')
     const [commenter, setCommenter] = useState('')
     const [theorist, setTheorist] = useState('')
-
-
 
     const handleComment = (e) => {
         setComment(e.target.value)
@@ -31,13 +28,11 @@ function Theories(props) {
         }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/comments`, newComment)
             .then(response => {
-                console.log(response)
                 setRedirect(true)
             })
             .catch(err => console.log(err))
     }
 
- 
     const handleTheory = (e) => {
         e.preventDefault()
         setTheory(e.target.value)
@@ -52,15 +47,12 @@ function Theories(props) {
         }
         axios.post(`${REACT_APP_SERVER_URL}/wiki/theories`, newTheory)
             .then(response => {
-                console.log(response)
                 setRedirect(true)
             })
             .catch(err => console.log(err))
     }
 
     if (redirect) return <Redirect to="/theories" />
-
-
 
     return (
         <div className="theoriesPage">
@@ -81,35 +73,29 @@ function Theories(props) {
                             </form>
                             <hr></hr>
                             <div class="theoryReverse">
-                            {props.theories.map(theory => (
-                                <div className="theoryComments">
-                                    
-                                   
-                                    <p>Posted by: <b>{theory.theorist} <p>a total {props.user.rickOrMorty} 
-                                   
-                                    {console.log('1111', theory.theorist)}
-                                    
-                                    
-                                    </p> </b> </p> 
-                                    
-                                    <h2 className="ab2">{theory.body}</h2>
-                                    <ul>
-                                        <p>
-                                            {theory.comments.map(comment => (
-                                                <li>
-                                                    <p><b>{comment.userName}</b>: {comment.body}</p>
-                                                </li>
-                                            ))}
-                                        </p>
-                                    </ul>
-                                    <form data-theory={theory._id} onSubmit={handleSubmitComment}>
-                                        <textarea className="commentText" name="comment" type="text" defaultValue="Comment on this theory" onChange={handleComment} />
-                                        <br></br>
-                                        <button className="theoryBtn" type="submit">Add Comment</button>
-                                        <hr></hr>
-                                    </form>
-                                </div>
-                            ))}
+                                {props.theories.map(theory => (
+                                    <div className="theoryComments">
+                                        <p>Posted by: <b>{theory.theorist} <p>a total {props.user.rickOrMorty}
+                                            {console.log('1111', theory.theorist)}
+                                        </p> </b> </p>
+                                        <h2 className="ab2">{theory.body}</h2>
+                                        <ul>
+                                            <p>
+                                                {theory.comments.map(comment => (
+                                                    <li>
+                                                        <p><b>{comment.userName}</b>: {comment.body}</p>
+                                                    </li>
+                                                ))}
+                                            </p>
+                                        </ul>
+                                        <form data-theory={theory._id} onSubmit={handleSubmitComment}>
+                                            <textarea className="commentText" name="comment" type="text" defaultValue="Comment on this theory" onChange={handleComment} />
+                                            <br></br>
+                                            <button className="theoryBtn" type="submit">Add Comment</button>
+                                            <hr></hr>
+                                        </form>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                         : <div>
