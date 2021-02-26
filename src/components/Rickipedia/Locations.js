@@ -18,7 +18,6 @@ function Locations(props) {
                             <div class="dropdown-content">
                                 <li> <h4 className="ab1">Dimension: {location.dimension}</h4></li>
                                 <li>  <h4 className="ab2">Type: {location.type}</h4></li>
-
                             </div>
                         </ul>
                     </div>
