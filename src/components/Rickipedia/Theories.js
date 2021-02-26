@@ -76,7 +76,6 @@ function Theories(props) {
                                 {props.theories.map(theory => (
                                     <div className="theoryComments">
                                         <p>Posted by: <b>{theory.theorist} <p>a total {props.user.rickOrMorty}
-                                            {console.log('1111', theory.theorist)}
                                         </p> </b> </p>
                                         <h2 className="ab2">{theory.body}</h2>
                                         <ul>

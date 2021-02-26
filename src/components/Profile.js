@@ -8,8 +8,6 @@ const rick = 'https://i.imgur.com/Z7GorP4l.gif'
 
 const Profile = (props) => {
     let [redirect, setRedirect] = useState(false)
-    console.log(props);
-
     
     const handleDelete = (e) => {
         e.preventDefault()
