@@ -64,7 +64,7 @@ function Theories(props) {
                 {
                     props.isAuth
                         ? <div>
-                            <form onSubmit={handleSubmit}>
+                            <form class="theoryform" onSubmit={handleSubmit}>
                                 <div className="theoryText">
                                     <label htmlFor="theory">Got a Theory?</label>
                                     <textarea className="theoryText" type="text" name="theory" defaultValue="What's your theo...brrrrp...ry?" onChange={handleTheory} />
@@ -88,7 +88,7 @@ function Theories(props) {
                                                 ))}
                                             </p>
                                         </ul>
-                                        <form data-theory={theory._id} onSubmit={handleSubmitComment}>
+                                        <form class="theoryform" data-theory={theory._id} onSubmit={handleSubmitComment}>
                                             <textarea className="commentText" name="comment" type="text" defaultValue="Comment on this theory" onChange={handleComment} />
                                             <br></br>
                                             <button className="theoryBtn" type="submit">Add Comment</button>
@@ -100,7 +100,7 @@ function Theories(props) {
                         </div>
                         : <div>
                             {props.theories.map(theory => (
-                                <div>
+                                <div class="theoryform">
                                     <p>Posited by: <b>{theory.theorist}</b></p>
                                     <h2>{theory.body}</h2>
                                     <ul>

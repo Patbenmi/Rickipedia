@@ -10,7 +10,7 @@ import Profile from './components/Profile';
 import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
-import Home from './components/Rickipedia/Home'
+
 import Characters from './components/Rickipedia/Characters'
 import Character from './components/Rickipedia/Character'
 import Locations from './components/Rickipedia/Locations'
@@ -108,7 +108,7 @@ return (
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} setIsAuthenticated={setIsAuthenticated} handleLogout={handleLogout}/>
           <PrivateRoute path="/update" component={ UpdateProfile } user={currentUser} setCurrentUser={setCurrentUser} />
           <Route exact path="/" component={ Welcome } />
-          <Route path="/home" component={ Home } user={currentUser}/>
+         
           <Route path="/characters" render={()=>  <Characters characters={characters}/>}/>
           <Route path="/character/:id" render={(props)=>  <Character {...props} characters={characters}/>}/>
           <Route path="/locations" render={()=>  <Locations locations={locations}/>}/>

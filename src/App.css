@@ -193,21 +193,37 @@ Locations {
 
 .theoriesInfo {
   text-align: start;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .theoriesPage {
   text-align: center;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .theoryText {
   width: 500px;
   /* height: 100px; */
   text-align: center;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .commentText {
   width: 300px;
   text-align: center;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .theoryBtn, #deleteBtn {
@@ -221,4 +237,12 @@ Locations {
   border: solid 5px lime;
   border-radius: 35%;
   display: inline-block;
+}
+
+.theoryform {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
